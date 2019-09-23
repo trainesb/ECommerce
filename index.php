@@ -11,7 +11,7 @@ $view = new ECommerce\HomeView($user);
 </head>
 
 <body>
-<div class="mainpage">
+<div class="main">
     <?php
     echo $view->header($site);
     echo $view->footer();
