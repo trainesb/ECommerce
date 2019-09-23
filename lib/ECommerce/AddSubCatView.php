@@ -19,7 +19,7 @@ class AddSubCatView extends View {
 
     public function present() {
         return <<<HTML
-<form id="add-sub-cat" method="post" action="../../post/add-sub-cat.php" enctype="multipart/form-data">
+<form id="add-sub-cat" method="post" action="" enctype="multipart/form-data">
     <fieldset>
         <legend>Sub Category</legend>
         <p>
@@ -32,7 +32,7 @@ class AddSubCatView extends View {
         </p>
         <p>
             <label for="img">Select Image to upload</label>
-            <input type="file" name="uploadImg" id="uploadImg">
+            <input name="subImg" type="file" id="inputFile">
         <p>
             <label for="visible">Visible</label>
             <select id="visible" name="visible">
@@ -41,7 +41,7 @@ class AddSubCatView extends View {
             </select>
         </p>
        	<p>
-			<input type="submit" value="OK">
+			<input type="submit" value="Submit" class="btnSubmit">
 		</p>
     </fieldset>
 </form>

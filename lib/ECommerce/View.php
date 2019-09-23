@@ -26,14 +26,14 @@ class View {
     public function menu($site) {
         $top = new TopCategories($site);
         $allTop = $top->getAll();
-        $html = "<div class='menu'><ul>";
+        $html = "<nav class='menu'><ul>";
         foreach($allTop as $topCat) {
             $name = $topCat['name'];
             $html .= <<<HTML
 <li>$name</li>
 HTML;
         }
-        $html .= "</ul></div>";
+        $html .= "</ul></nav>";
         return $html;
     }
 
