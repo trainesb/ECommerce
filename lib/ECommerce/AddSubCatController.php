@@ -21,7 +21,7 @@ class AddSubCatController extends Controller {
             $name = $post['name'];
             $description = $post['description'];
             $visible = $post['visible'];
-            $img = "dist/".basename($this->files["file"]["name"]);
+            $img = "dist/img/sub-cat/".basename($this->files["file"]["name"]);
 
             $sub = new SubCategories($site);
             if($sub->add($name, $description, $visible, $img)) {
@@ -35,7 +35,7 @@ class AddSubCatController extends Controller {
 
 
     public function uploadImg() {
-        $target_dir = dirname(__FILE__)."/../../src/img/";
+        $target_dir = dirname(__FILE__)."/../../dist/img/sub-cat/";
         $target_file = $target_dir . basename($this->files["file"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 

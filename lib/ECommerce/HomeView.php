@@ -47,6 +47,7 @@ HTML;
             if($sub['visible']) {
                 $html .= <<<HTML
 <div class="sub-card">
+    <img src="$img" alt="Sub-category image">
     <div class="container">
         <h4><b>$name</b></h4>
         <p>$description</p>
