@@ -41,7 +41,7 @@ class AddSubCatView extends View {
             </select>
         </p>
        	<p>
-			<input type="submit" value="Submit">
+			<input type="submit" value="Upload Image" name="submit">
 		</p>
     </fieldset>
 </form>

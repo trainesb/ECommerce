@@ -44,8 +44,8 @@ HTML;
             $img = $sub['img'];
             $name = $sub['name'];
             $description = $sub['description'];
-            //$visible = $sub['visible'];
-            $html .= <<<HTML
+            if($sub['visible']) {
+                $html .= <<<HTML
 <div class="sub-card">
     <div class="container">
         <h4><b>$name</b></h4>
@@ -53,6 +53,7 @@ HTML;
     </div>
 </div>
 HTML;
+            }
         }
         $html .= "</div>";
         return $html;
