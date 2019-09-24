@@ -11168,10 +11168,18 @@ const AddSubCat = function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("form#add-sub-cat").submit(function (event) {
         event.preventDefault();
 
+        var form_data = new FormData();
+        form_data.append('name', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#name").val());
+        form_data.append('description', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#description").val());
+        form_data.append('file', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#file")[0].files[0]);
+        form_data.append('visible', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#visible").val());
+
         jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
             url: "post/add-sub-cat.php",
-            data: jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).serialize(),
-            method: "POST",
+            data: form_data,
+            processData: false,
+            contentType: false,
+            type: "POST",
             success: function(data) {
                 var json = Object(_parse_json__WEBPACK_IMPORTED_MODULE_1__["parse_json"])(data);
                 console.log(json);

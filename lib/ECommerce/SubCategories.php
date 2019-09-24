@@ -10,13 +10,13 @@ class SubCategories extends Table {
         parent::__construct($site, "sub_cat");
     }
 
-    public function add($post) {
+    public function add($name, $description, $visible, $img) {
         $sql = <<<SQL
 INSERT INTO $this->tableName (name, description, visible, img)
 VALUES (?, ?, ?, ?)
 SQL;
         $statement = $this->pdo()->prepare($sql);
-        $statement->execute(array($post['name'], $post['description'], $post['visible']. $post['img']));
+        $statement->execute(array($name, $description, $visible, $img));
         if($statement->rowCount() === 0) {
             return false;
         }

@@ -19,7 +19,7 @@ class AddSubCatView extends View {
 
     public function present() {
         return <<<HTML
-<form id="add-sub-cat" method="post" action="" enctype="multipart/form-data">
+<form id="add-sub-cat" name="add-sub-cat">
     <fieldset>
         <legend>Sub Category</legend>
         <p>
@@ -31,17 +31,17 @@ class AddSubCatView extends View {
             <textarea id="description" name="description" placeholder="Description..."></textarea>
         </p>
         <p>
-            <label for="img">Select Image to upload</label>
-            <input name="subImg" type="file" id="inputFile">
+            <label for="file">Select Image to upload</label>
+            <input type="file" id="file" name="file">
         <p>
             <label for="visible">Visible</label>
             <select id="visible" name="visible">
-                <option value="true">True</option>
-                <option value="false">False</option>
+                <option value="1">True</option>
+                <option value="0">False</option>
             </select>
         </p>
        	<p>
-			<input type="submit" value="Submit" class="btnSubmit">
+			<input type="submit" value="Submit">
 		</p>
     </fieldset>
 </form>
