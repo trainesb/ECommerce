@@ -10,9 +10,11 @@ class StaffView extends View {
     private $topCategories;
     private $subCategories;
     private $products;
+    private $users;
 
     public function __construct(Site $site) {
         $this->site = $site;
+        $this->users = new Users($site);
         $this->topCategories = new TopCategories($this->site);
         $this->subCategories = new SubCategories($this->site);
         $this->products = new Products($this->site);
@@ -20,9 +22,6 @@ class StaffView extends View {
         $this->setTitle("Staff View");
         $this->addLink("./users.php", "Users");
         $this->addLink("./profile.php", "Profile");
-        $this->addLink("./add-top-cat.php", "Add Top");
-        $this->addLink("./add-sub-cat.php", "Add Sub");
-        $this->addLink("./add-product.php", "Add Product");
         $this->addLink("post/logout.php", "Log Out");
     }
 
@@ -30,6 +29,7 @@ class StaffView extends View {
         echo $this->presentTopCategories();
         echo $this->presentSubCategories();
         echo $this->presentProducts();
+        echo $this->presentUsers();
     }
 
     public function presentTopCategories() {
@@ -132,6 +132,55 @@ HTML;
         }
         $html .= '</table>';
         return $html;
+    }
+
+    public function presentBtns() {
+        $html = <<<HTML
+<div class="staff-btns">
+    <p><a href="./user.php">Add User</a></p>
+    <p><a href="./add-top-cat.php">Add Top-Category</a></p>
+    <p><a href="./add-sub-cat.php">Add Sub-Category</a></p>
+    <p><a href="./add-product.php">Add Product</a></p>
+</div>
+HTML;
+        return $html;
+    }
+
+    public function presentUsers() {
+        $users = $this->users->getAll();
+        $html = <<<HTML
+<form class="table">
+	<h3>Users</h3>
+	<table>
+		<tr>
+			<th>&nbsp;</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Role</th>
+		</tr>
+HTML;
+
+        foreach ($users as $user) {
+            $name = $user["name"];
+            $email = $user["email"];
+            $role = $user["role"];
+            $html .= <<<HTML
+		<tr>
+			<td><input type="radio" name="user"></td>
+			<td>$name</td>
+			<td>$email</td>
+			<td>$role</td>
+		</tr>
+HTML;
+
+        }
+
+        $html .= <<<HTML
+	</table>
+</form>
+HTML;
+        return $html;
+
     }
 
 }

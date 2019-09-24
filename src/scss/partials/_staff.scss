@@ -1,6 +1,11 @@
 
 
 div.staff {
+
+  h3 {
+    text-align: center;
+  }
+
   div.menu {
     font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 2em;
@@ -14,6 +19,24 @@ div.staff {
       vertical-align: middle;
       height: 100px;
       width: auto;
+    }
+  }
+
+  div.staff-btns {
+    text-align: center;
+
+    p {
+      display: inline;
+
+      a {
+        text-decoration: none;
+        color: #000000;
+      }
+
+      a:hover {
+        text-decoration: underline;
+        color: #18453B;
+      }
     }
   }
 }
