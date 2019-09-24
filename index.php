@@ -1,7 +1,7 @@
 <?php
 $open = true;
 require 'lib/site.inc.php';
-$view = new ECommerce\HomeView($user);
+$view = new ECommerce\HomeView($site, $user);
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +14,7 @@ $view = new ECommerce\HomeView($user);
 <div class="main">
     <?php
     echo $view->header($site);
+    echo $view->presentSub();
     echo $view->footer();
     ?>
 </div>
