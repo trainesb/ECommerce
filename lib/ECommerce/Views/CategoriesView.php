@@ -51,7 +51,7 @@ class CategoriesView extends View {
             }
 
         }
-        $html .= "</ul>";
+        $html .= "</ul></div>";
         return $html;
     }
 
@@ -60,11 +60,16 @@ class CategoriesView extends View {
 
         echo "<div class='flex-container'>";
         echo $this->presentTop();
-
         echo $this->presentMap();
-
         echo $this->presentSub();
         echo "</div>";
+
+        echo $this->addMap();
+
+        //echo "<div class='flex-container full'>";
+        //echo $this->addTop();
+        //echo $this->addSub();
+        //echo "</div>";
     }
 
     public function presentTop() {
@@ -114,4 +119,110 @@ class CategoriesView extends View {
         return $html;
     }
 
+    public function addTop() {
+        return <<<HTML
+<form id="add-top-cat">
+    <fieldset>
+        <legend>Top Category</legend>
+        <p>
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name="name" placeholder="Name">
+        </p>
+        <p>
+            <label for="description">Description</label><br>
+            <textarea id="description" name="description" placeholder="Description..."></textarea>
+        </p>
+        <p>
+            <label for="visible">Visible</label>
+            <select id="visible" name="visible">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+        </p>
+       	<p>
+			<input type="submit" value="OK">
+		</p>
+    </fieldset>
+</form>
+HTML;
+    }
+
+    public function addSub() {
+        return <<<HTML
+<form id="add-sub-cat" name="add-sub-cat">
+    <fieldset>
+        <legend>Sub Category</legend>
+        <p>
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name="name" placeholder="Name">
+        </p>
+        <p>
+            <label for="description">Description</label><br>
+            <textarea id="description" name="description" placeholder="Description..."></textarea>
+        </p>
+        <p>
+            <label for="file">Select Image to upload</label>
+            <input type="file" id="file" name="file">
+        <p>
+            <label for="visible">Visible</label>
+            <select id="visible" name="visible">
+                <option value="1">True</option>
+                <option value="0">False</option>
+            </select>
+        </p>
+       	<p>
+			<input type="submit" value="Upload Image" name="submit">
+		</p>
+    </fieldset>
+</form>
+HTML;
+    }
+
+    public function addMap() {
+        $allTop = $this->top->getAll();
+        $allSub = $this->sub->getAll();
+        $html = <<<HTML
+<form id="add-top-sub">
+    <fieldset>
+        <legend>Top-Sub Map</legend>
+        <p>
+            <label for="top_id">Top-Category</label>
+            <select id="top_id" name="top_id">
+HTML;
+
+        if(!empty($allTop)) {
+            foreach ($allTop as $top) {
+                $top_id = $top['id'];
+                $top_name = $top['name'];
+                $html .= "<option value='$top_id'>$top_name</option>";
+            }
+        }
+
+        $html .= <<<HTML
+            </select>
+        </p>
+        <p>
+            <label for="sub_id">Sub-Category</label>
+            <select id="sub_id" name="sub_id">
+HTML;
+
+        if(!empty($allSub)) {
+            foreach ($allSub as $sub) {
+                $sub_id = $sub['id'];
+                $sub_name = $sub['name'];
+                $html .= "<option value='$sub_id'>$sub_name</option>";
+            }
+        }
+
+        $html .= <<<HTML
+            </select>
+        </p>
+       	<p>
+			<input type="submit" value="OK">
+		</p>
+    </fieldset>
+</form>
+HTML;
+        return $html;
+    }
 }

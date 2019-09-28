@@ -3,3 +3,7 @@ div.flex-container {
   justify-content: space-around;
   align-items: center;
 }
+
+div.flex-container.full {
+  width: 100%;
+}

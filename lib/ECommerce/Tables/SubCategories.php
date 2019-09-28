@@ -25,11 +25,11 @@ SQL;
     }
 
     public function getById($id) {
-        $sql = "SELECT * FROM $this->tableName";
+        $sql = "SELECT * FROM $this->tableName WHERE id=?";
         $statement = $this->pdo()->prepare($sql);
         $statement->execute(array($id));
         if($statement->rowCount() === 0) {
-            return flase;
+            return null;
         }
 
         return $statement->fetch(\PDO::FETCH_ASSOC);
