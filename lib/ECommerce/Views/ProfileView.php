@@ -3,6 +3,8 @@
 
 namespace ECommerce\Views;
 
+use ECommerce\User;
+
 class ProfileView extends View {
 
     private $user;
