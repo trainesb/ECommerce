@@ -38,7 +38,7 @@ class SubCatController extends Controller {
 
 
     public function uploadImg() {
-        $target_dir = dirname(__FILE__)."/../../dist/img/sub-cat/";
+        $target_dir = dirname(__FILE__)."/../../../dist/img/sub-cat/";
         $target_file = $target_dir . basename($this->files["file"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 

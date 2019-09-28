@@ -14,10 +14,8 @@ class TopCategories extends Table {
     }
 
     public function add($name, $description, $visible) {
-        $sql = <<<SQL
-INSERT INTO $this->tableName (name, description, visible)
-VALUES (?, ?, ?)
-SQL;
+        $sql = "INSERT INTO $this->tableName (name, description, visible) VALUES (?, ?, ?)";
+
         $statement = $this->pdo()->prepare($sql);
         $statement->execute(array($name, $description, $visible));
         if($statement->rowCount() === 0) {
@@ -26,15 +24,14 @@ SQL;
         return true;
     }
 
-    public function getAll() {
-        $sql = <<<SQL
-SELECT * FROM $this->tableName
-SQL;
+    public function getById($id) {
+        $sql = "SELECT * FROM $this->tableName";
         $statement = $this->pdo()->prepare($sql);
-        $statement->execute();
+        $statement->execute(array($id));
         if($statement->rowCount() === 0) {
-            return null;
+            return flase;
         }
-        return $statement->fetchAll(\PDO::FETCH_ASSOC);
+
+        return $statement->fetch(\PDO::FETCH_ASSOC);
     }
 }

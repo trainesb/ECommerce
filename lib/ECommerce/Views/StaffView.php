@@ -26,6 +26,8 @@ class StaffView extends View {
     <p><a href="./top-cat.php">Top-Categories</a></p>
     <p><a href="./sub-cat.php">Sub-Categories</a></p>
     <p><a href="./product.php">Products</a></p>
+    <p><a href="./categories.php">Category Map</a></p>
+    <p><a href="./product-map.php">Product Map</a></p>
 </div>
 HTML;
         return $html;

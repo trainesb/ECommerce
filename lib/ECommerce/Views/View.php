@@ -25,20 +25,6 @@ class View {
         return $this->protectRedirect;
     }
 
-    public function menu($site) {
-        $top = new TopCategories($site);
-        $allTop = $top->getAll();
-        $html = "<nav class='menu'><ul>";
-        foreach($allTop as $topCat) {
-            $name = $topCat['name'];
-            $html .= <<<HTML
-<li>$name</li>
-HTML;
-        }
-        $html .= "</ul></nav>";
-        return $html;
-    }
-
     public function setTitle($title) { $this->title = $title; }
 
     public function addLink($href, $text) { $this->links[] = ["href" => $href, "text" => $text]; }
@@ -56,7 +42,7 @@ HTML;
         $html = <<<HTML
 <nav>
     <ul class="left">
-        <li><a href="..">Business Name (Header)</a></li>
+        <li><a href="./">Business Name (Header)</a></li>
     </ul>
 HTML;
 
@@ -73,7 +59,6 @@ HTML;
         $additional = $this->headerAdditional();
 
         $html .= '</nav>';
-        $html .= $this->menu($site);
 
         $html .= <<<HTML
 <header class="main">

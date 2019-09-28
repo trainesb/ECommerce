@@ -1,0 +1,9 @@
+div.flex-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+div.flex-container.full {
+  width: 100%;
+}
