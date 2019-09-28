@@ -7,7 +7,7 @@ namespace ECommerce\Controllers;
 use ECommerce\Site;
 use ECommerce\Tables\SubCategories;
 
-class AddSubCatController extends Controller {
+class SubCatController extends Controller {
 
     private $post;
     protected $site;

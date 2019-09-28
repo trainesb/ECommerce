@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import {parse_json} from "./parse_json";
 
-export const AddSubCat = function () {
+export const SubCat = function () {
 
     $("form#add-sub-cat").submit(function (event) {
         event.preventDefault();
@@ -13,7 +13,7 @@ export const AddSubCat = function () {
         form_data.append('visible', $("#visible").val());
 
         $.ajax({
-            url: "post/add-sub-cat.php",
+            url: "post/sub-cat.php",
             data: form_data,
             processData: false,
             contentType: false,

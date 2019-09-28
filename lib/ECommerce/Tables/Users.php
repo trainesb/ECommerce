@@ -4,6 +4,7 @@
 namespace ECommerce\Tables;
 
 use ECommerce\Site;
+use ECommerce\User;
 
 class Users extends Table {
 

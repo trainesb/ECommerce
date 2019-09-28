@@ -1,13 +1,13 @@
 import $ from 'jquery';
 import {parse_json} from "./parse_json";
 
-export const AddTopCat = function () {
+export const TopCat = function () {
 
     $("form#add-top-cat").submit(function (event) {
         event.preventDefault();
 
         $.ajax({
-            url: "post/add-top-cat.php",
+            url: "post/top-cat.php",
             data: $(this).serialize(),
             method: "POST",
             success: function(data) {

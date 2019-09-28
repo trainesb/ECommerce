@@ -1,11 +1,13 @@
 <?php
 require 'lib/site.inc.php';
-$view = new ECommerce\Views\UsersView($site);
+$view = new ECommerce\Views\TopCatView($site);
+
 if(!$view->protect($site, $user)) {
     header("location: " . $view->getProtectRedirect());
     exit;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,15 +15,11 @@ if(!$view->protect($site, $user)) {
 </head>
 
 <body>
-<div class="users">
-
+<div class="add-top-cat">
     <?php
     echo $view->header($site);
     echo $view->present();
     echo $view->footer();
     ?>
-
-</div>
-
 </body>
 </html>
