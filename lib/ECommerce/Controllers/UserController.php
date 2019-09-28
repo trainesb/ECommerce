@@ -1,8 +1,13 @@
 <?php
 
 
-namespace ECommerce;
+namespace ECommerce\Controllers;
 
+
+use ECommerce\Site;
+use ECommerce\Email;
+use ECommerce\Tables\Users;
+use ECommerce\User;
 
 class UserController extends Controller {
 

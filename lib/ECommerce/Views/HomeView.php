@@ -1,15 +1,17 @@
 <?php
 
 
-namespace ECommerce;
+namespace ECommerce\Views;
 
+use ECommerce\Site;
+use ECommerce\Tables\SubCategories;
 
 class HomeView extends View {
 
     protected $site;
     private $subCat;
 
-    public function __construct($site, $user) {
+    public function __construct(Site $site, $user) {
         $this->site = $site;
         $this->subCat = new SubCategories($site);
         $this->setTitle("Home");
@@ -44,15 +46,17 @@ HTML;
             $img = $sub['img'];
             $name = $sub['name'];
             $description = $sub['description'];
-            //$visible = $sub['visible'];
-            $html .= <<<HTML
+            if($sub['visible']) {
+                $html .= <<<HTML
 <div class="sub-card">
+    <img src="$img" alt="Sub-category image">
     <div class="container">
         <h4><b>$name</b></h4>
         <p>$description</p>
     </div>
 </div>
 HTML;
+            }
         }
         $html .= "</div>";
         return $html;

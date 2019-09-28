@@ -1,6 +1,6 @@
 <?php
 require 'lib/site.inc.php';
-$view = new ECommerce\AddSubCatView();
+$view = new ECommerce\Views\AddSubCatView();
 
 if(!$view->protect($site, $user)) {
     header("location: " . $view->getProtectRedirect());

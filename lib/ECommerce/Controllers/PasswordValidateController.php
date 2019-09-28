@@ -1,8 +1,12 @@
 <?php
 
 
-namespace ECommerce;
+namespace ECommerce\Controllers;
 
+
+use ECommerce\Site;
+use ECommerce\Tables\Users;
+use ECommerce\Tables\Validators;
 
 class PasswordValidateController {
 

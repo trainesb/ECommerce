@@ -1,8 +1,10 @@
 <?php
 
 
-namespace ECommerce;
+namespace ECommerce\Views;
 
+use ECommerce\Site;
+use ECommerce\Tables\TopCategories;
 
 class View {
 
@@ -10,7 +12,7 @@ class View {
     private $links = [];    //Links to add to the nav bar
     private $protectRedirect = null;
 
-    public function protect($site, $user) {
+    public function protect(Site $site, $user) {
         if($user->isStaff()) {
             return true;
         }
@@ -54,7 +56,7 @@ HTML;
         $html = <<<HTML
 <nav>
     <ul class="left">
-        <li><a href="./">Business Name (Header)</a></li>
+        <li><a href="..">Business Name (Header)</a></li>
     </ul>
 HTML;
 

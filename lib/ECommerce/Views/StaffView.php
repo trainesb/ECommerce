@@ -1,8 +1,14 @@
 <?php
 
 
-namespace ECommerce;
+namespace ECommerce\Views;
 
+
+use ECommerce\Site;
+use ECommerce\Tables\Products;
+use ECommerce\Tables\SubCategories;
+use ECommerce\Tables\TopCategories;
+use ECommerce\Tables\Users;
 
 class StaffView extends View {
 
@@ -19,7 +25,7 @@ class StaffView extends View {
         $this->subCategories = new SubCategories($this->site);
         $this->products = new Products($this->site);
 
-        $this->setTitle("Staff View");
+        $this->setTitle("Staff Views");
         $this->addLink("./users.php", "Users");
         $this->addLink("./profile.php", "Profile");
         $this->addLink("post/logout.php", "Log Out");
@@ -73,6 +79,7 @@ HTML;
         <th>Name</th>
 		<th>Description</th>
 		<th>Visible</th>
+		<th>Image</th>
 	</tr>
 HTML;
         if($all) {
@@ -80,12 +87,14 @@ HTML;
                 $name = $sub['name'];
                 $description = $sub['description'];
                 $visible = $sub['visible'];
+                $image = $sub['img'];
                 $html .= <<<HTML
             <tr>
                 <td><input type="radio" name="product"></td>
                 <td>$name</td>
                 <td>$description</td>
                 <td>$visible</td>
+                <td>$image</td>
             </tr>
 HTML;
             }

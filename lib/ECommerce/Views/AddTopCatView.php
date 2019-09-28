@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ECommerce;
+namespace ECommerce\Views;
 
 
 class AddTopCatView extends View {

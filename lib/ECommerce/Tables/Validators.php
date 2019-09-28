@@ -1,8 +1,9 @@
 <?php
 
 
-namespace ECommerce;
+namespace ECommerce\Tables;
 
+use ECommerce\Site;
 
 class Validators extends Table {
 

@@ -1,6 +1,6 @@
 <?php
 require 'lib/site.inc.php';
-$view = new ECommerce\AddProductView();
+$view = new ECommerce\Views\AddProductView();
 
 if(!$view->protect($site, $user)) {
     header("location: " . $view->getProtectRedirect());

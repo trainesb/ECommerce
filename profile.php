@@ -1,6 +1,6 @@
 <?php
 require 'lib/site.inc.php';
-$view = new ECommerce\ProfileView($user);
+$view = new ECommerce\Views\ProfileView($user);
 if($user->isStaff()) {
     $view->addLink("staff.php", "Staff");
     $view->addLink("users.php", "Users");

@@ -1,7 +1,7 @@
 <?php
 $open = true;
 require 'lib/site.inc.php';
-$view = new ECommerce\HomeView($site, $user);
+$view = new ECommerce\Views\HomeView($site, $user);
 ?>
 
 <!DOCTYPE html>

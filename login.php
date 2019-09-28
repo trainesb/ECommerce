@@ -1,7 +1,7 @@
 <?php
 $open = true;
 require 'lib/site.inc.php';
-$view = new ECommerce\LoginView($site, $_COOKIE);
+$view = new ECommerce\Views\LoginView($site, $_COOKIE);
 ?>
 <!DOCTYPE html>
 <html lang="en">

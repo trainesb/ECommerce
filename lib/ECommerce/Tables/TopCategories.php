@@ -1,22 +1,25 @@
 <?php
 
 
-namespace ECommerce;
+namespace ECommerce\Tables;
 
 
-class Products extends Table {
+
+use ECommerce\Site;
+
+class TopCategories extends Table {
 
     public function __construct(Site $site) {
-        parent::__construct($site, "product");
+        parent::__construct($site, "top_cat");
     }
 
-    public function add($post) {
+    public function add($name, $description, $visible) {
         $sql = <<<SQL
-INSERT INTO $this->tableName (sku, title, price, soldout, description, visible)
-VALUES (?, ?, ?, ?, ?, ?)
+INSERT INTO $this->tableName (name, description, visible)
+VALUES (?, ?, ?)
 SQL;
         $statement = $this->pdo()->prepare($sql);
-        $statement->execute(array($post['sku'], $post['title'], $post['price'], $post['sold-out'], $post['description'], $post['visible']));
+        $statement->execute(array($name, $description, $visible));
         if($statement->rowCount() === 0) {
             return false;
         }

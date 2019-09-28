@@ -1,8 +1,10 @@
 <?php
 
 
-namespace ECommerce;
+namespace ECommerce\Views;
 
+use ECommerce\Site;
+use ECommerce\Tables\Users;
 
 class UsersView extends View {
 

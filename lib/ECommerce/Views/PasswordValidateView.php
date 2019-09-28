@@ -1,8 +1,9 @@
 <?php
 
 
-namespace ECommerce;
+namespace ECommerce\Views;
 
+use ECommerce\Site;
 
 class PasswordValidateView extends View {
 
