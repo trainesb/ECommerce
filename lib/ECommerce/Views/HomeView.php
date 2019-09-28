@@ -20,9 +20,9 @@ class HomeView extends View {
             if($user->isStaff()) {
                 $this->addLink("./staff.php", "Staff");
                 $this->addLink("./users.php", "Users");
-                //$this->addLink("./add-top-cat.php", "Add Top");
-                //$this->addLink("./add-sub-cat.php", "Add Sub");
-                //$this->addLink("./add-product.php", "Add Product");
+                //$this->addLink("./top-cat.php", "Add Top");
+                //$this->addLink("./sub-cat.php", "Add Sub");
+                //$this->addLink("./product.php", "Add Product");
             }
             $this->addLink("./profile.php", "Profile");
             $this->addLink("./logout,php", "Log Out");

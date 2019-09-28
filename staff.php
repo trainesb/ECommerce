@@ -19,7 +19,6 @@ if(!$view->protect($site, $user)) {
     <?php
     echo $view->header($site);
     echo $view->presentBtns();
-    echo $view->present();
     echo $view->footer();
     ?>
 </body>

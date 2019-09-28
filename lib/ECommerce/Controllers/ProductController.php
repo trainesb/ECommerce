@@ -6,7 +6,7 @@ namespace ECommerce\Controllers;
 use ECommerce\Site;
 use ECommerce\Tables\Products;
 
-class AddProductController extends Controller {
+class ProductController extends Controller {
 
     private $products;
 

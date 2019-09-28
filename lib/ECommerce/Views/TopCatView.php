@@ -4,22 +4,57 @@
 namespace ECommerce\Views;
 
 
-class AddTopCatView extends View {
+use ECommerce\Site;
+use ECommerce\Tables\TopCategories;
 
-    public function __construct() {
+class TopCatView extends View {
+
+    private $site;
+    private $topCategories;
+
+    public function __construct(Site $site) {
+        $this->site = $site;
+        $this->topCategories = new TopCategories($this->site);
+
         $this->setTitle("Add Top Category");
 
         $this->addLink("./staff.php", "Staff");
-        $this->addLink("./users.php", "Users");
         $this->addLink("./profile.php", "Profile");
-        $this->addLink("./add-sub-cat.php", "Add Sub");
-        $this->addLink("./add-product.php", "Add Product");
         $this->addLink("post/logout.php", "Log Out");
     }
 
     public function present() {
-        return $this->AddTop();
+        echo $this->presentTopCategories();
+        echo $this->AddTop();
+    }
 
+    public function presentTopCategories() {
+        $all = $this->topCategories->getAll();
+
+        $html = <<<HTML
+<table>
+    <tr>
+        <th></th>
+        <th>Name</th>
+		<th>Description</th>
+		<th>Visible</th>
+	</tr>
+HTML;
+        foreach ($all as $top) {
+            $name = $top['name'];
+            $description = $top['description'];
+            $visible = $top['visible'];
+            $html .= <<<HTML
+		<tr>
+			<td><input type="radio" name="top-cat"></td>
+			<td>$name</td>
+			<td>$description</td>
+			<td>$visible</td>
+		</tr>
+HTML;
+        }
+        $html .= '</table>';
+        return $html;
     }
 
     public function AddTop() {

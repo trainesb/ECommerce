@@ -7,7 +7,7 @@ namespace ECommerce\Controllers;
 use ECommerce\Site;
 use ECommerce\Tables\TopCategories;
 
-class AddTopCatController extends Controller {
+class TopCatController extends Controller {
 
     protected $site;
     private $topCategories;

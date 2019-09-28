@@ -4,20 +4,31 @@
 namespace ECommerce\Views;
 
 
-class AddProductView extends View {
+use ECommerce\Site;
+use ECommerce\Tables\Products;
 
-    public function __construct() {
+class ProductView extends View {
+
+    private $site;
+    private $products;
+
+    public function __construct(Site $site) {
+        $this->site = $site;
+        $this->products = new Products($this->site);
+
         $this->setTitle("Add Product");
 
         $this->addLink("./staff.php", "Staff");
-        $this->addLink("./users.php", "Users");
         $this->addLink("./profile.php", "Profile");
-        $this->addLink("./add-top-cat.php", "Add Top");
-        $this->addLink("./add-sub-cat", "Add Sub");
         $this->addLink("post/logout.php", "Log Out");
     }
 
     public function present() {
+        echo $this->presentProducts();
+        echo $this->presentAddProduct();
+    }
+
+    public function presentAddProduct() {
         return <<<HTML
 <form id="add-product" method="post" enctype="multipart/form-data">
     <fieldset>
@@ -58,5 +69,43 @@ class AddProductView extends View {
     </fieldset>
 </form>
 HTML;
+    }
+
+    public function presentProducts() {
+        $all = $this->products->getAll();
+
+        $html = <<<HTML
+<table>
+    <tr>
+        <th></th>
+        <th>SKU</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Sold Out</th>
+		<th>Description</th>
+		<th>Visible</th>
+	</tr>
+HTML;
+        foreach ($all as $product) {
+            $sku = $product['sku'];
+            $title = $product['title'];
+            $price = $product['price'];
+            $soldout = $product['soldout'];
+            $description = $product['description'];
+            $visible = $product['visible'];
+            $html .= <<<HTML
+		<tr>
+			<td><input type="radio" name="product"></td>
+			<td>$sku</td>
+			<td>$title</td>
+			<td>$price</td>
+			<td>$soldout</td>
+			<td>$description</td>
+			<td>$visible</td>
+		</tr>
+HTML;
+        }
+        $html .= '</table>';
+        return $html;
     }
 }
