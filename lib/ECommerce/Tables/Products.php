@@ -23,16 +23,4 @@ SQL;
         }
         return true;
     }
-
-    public function getAll() {
-        $sql = <<<SQL
-SELECT * FROM $this->tableName
-SQL;
-        $statement = $this->pdo()->prepare($sql);
-        $statement->execute();
-        if($statement->rowCount() === 0) {
-            return null;
-        }
-        return $statement->fetchAll(\PDO::FETCH_ASSOC);
-    }
 }

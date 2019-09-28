@@ -14,6 +14,10 @@ class ProfileView extends View {
 
         $this->setTitle("Profile");
 
+        if($user->isStaff()) {
+            $this->addLink("staff.php", "Staff");
+        }
+        $this->addLink("post/logout.php", "Log Out");
     }
 
     public function present() {

@@ -1,6 +1,11 @@
 <?php
 require 'lib/site.inc.php';
-$view = new ECommerce\Views\ProfileView($user);
+$view = new ECommerce\Views\CategoriesView($site);
+
+if(!$view->protect($site, $user)) {
+    header("location: " . $view->getProtectRedirect());
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +15,7 @@ $view = new ECommerce\Views\ProfileView($user);
 </head>
 
 <body>
-<div class="staff">
+<div class="categories">
     <?php
     echo $view->header($site);
     echo $view->present();

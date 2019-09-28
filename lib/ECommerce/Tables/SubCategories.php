@@ -24,15 +24,14 @@ SQL;
         return true;
     }
 
-    public function getAll() {
-        $sql = <<<SQL
-SELECT * FROM $this->tableName
-SQL;
+    public function getById($id) {
+        $sql = "SELECT * FROM $this->tableName";
         $statement = $this->pdo()->prepare($sql);
-        $statement->execute();
+        $statement->execute(array($id));
         if($statement->rowCount() === 0) {
-            return null;
+            return flase;
         }
-        return $statement->fetchAll(\PDO::FETCH_ASSOC);
+
+        return $statement->fetch(\PDO::FETCH_ASSOC);
     }
 }
