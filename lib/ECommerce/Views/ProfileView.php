@@ -1,8 +1,7 @@
 <?php
 
 
-namespace ECommerce;
-
+namespace ECommerce\Views;
 
 class ProfileView extends View {
 

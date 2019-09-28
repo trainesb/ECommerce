@@ -1,15 +1,17 @@
 <?php
 
 
-namespace ECommerce;
+namespace ECommerce\Views;
 
+use ECommerce\Site;
+use ECommerce\Tables\SubCategories;
 
 class HomeView extends View {
 
     protected $site;
     private $subCat;
 
-    public function __construct($site, $user) {
+    public function __construct(Site $site, $user) {
         $this->site = $site;
         $this->subCat = new SubCategories($site);
         $this->setTitle("Home");

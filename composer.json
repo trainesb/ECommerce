@@ -1,5 +1,8 @@
 {
   "autoload": {
     "psr-4": {"ECommerce\\": "lib/ECommerce"}
+  },
+  "require": {
+    "ext-json": "*"
   }
 }

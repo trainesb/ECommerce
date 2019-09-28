@@ -1,7 +1,7 @@
 <?php
 $open = true;
 require 'lib/site.inc.php';
-$view = new ECommerce\PasswordValidateView($site, $_GET);
+$view = new ECommerce\Views\PasswordValidateView($site, $_GET);
 ?>
 <!DOCTYPE html>
 <html lang="en">

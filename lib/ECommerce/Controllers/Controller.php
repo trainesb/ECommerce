@@ -1,8 +1,10 @@
 <?php
 
 
-namespace ECommerce;
+namespace ECommerce\Controllers;
 
+
+use ECommerce\Site;
 
 class Controller {
 

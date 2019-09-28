@@ -1,8 +1,11 @@
 <?php
 
 
-namespace ECommerce;
+namespace ECommerce\Controllers;
 
+
+use ECommerce\Site;
+use ECommerce\Tables\TopCategories;
 
 class AddTopCatController extends Controller {
 
