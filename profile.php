@@ -12,7 +12,7 @@ $view = new ECommerce\Views\ProfileView($user);
 <body>
 <div class="staff">
     <?php
-    echo $view->header($site);
+    echo $view->nav($site);
     echo $view->present();
     echo $view->footer();
     ?>

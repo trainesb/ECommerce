@@ -28,11 +28,15 @@ class ProductMapView extends View {
     }
 
     public function present() {
+        echo "<div class='row-container'>";
+        echo $this->sideNav();
+        echo "<div class='col-main'>";
+        echo "<h1 class='center'>Sub-Collection Product Map</h1>";
         echo "<div class='flex-container'>";
         echo $this->presentSub();
         echo $this->presentMap();
         echo $this->presentProd();
-        echo "</div>";
+        echo "</div></div></div>";
     }
 
     public function presentSub() {

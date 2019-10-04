@@ -7,7 +7,7 @@ namespace ECommerce\Views;
 use ECommerce\Site;
 use ECommerce\Tables\SubCategories;
 
-class SubCatView extends View {
+class AddSubCatView extends View {
 
     private $site;
     private $subCategories;
@@ -24,46 +24,17 @@ class SubCatView extends View {
     }
 
     public function present() {
-        echo $this->presentSubCategories();
-        echo $this->presentAddSub();
-    }
-
-    public function presentSubCategories() {
-        $all = $this->subCategories->getAll();
-
-        $html = <<<HTML
-<table>
-    <tr>
-        <th></th>
-        <th>Name</th>
-		<th>Description</th>
-		<th>Visible</th>
-		<th>Image</th>
-	</tr>
-HTML;
-        if($all) {
-            foreach ($all as $sub) {
-                $name = $sub['name'];
-                $description = $sub['description'];
-                $visible = $sub['visible'];
-                $image = $sub['img'];
-                $html .= <<<HTML
-            <tr>
-                <td><input type="radio" name="product"></td>
-                <td>$name</td>
-                <td>$description</td>
-                <td>$visible</td>
-                <td>$image</td>
-            </tr>
-HTML;
-            }
-        }
-        $html .= '</table>';
-        return $html;
+        echo "<div class='row-container'>";
+        echo $this->sideNav();
+        echo "<div class='col-main'>";
+        echo "<h1 class='center'>Collections</h1>";
+        echo $this->addSub();
+        echo "</div></div>";
     }
 
 
-    public function presentAddSub() {
+
+    public function addSub() {
         return <<<HTML
 <form id="add-sub-cat" name="add-sub-cat">
     <fieldset>

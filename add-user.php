@@ -1,6 +1,6 @@
 <?php
 require 'lib/site.inc.php';
-$view = new ECommerce\Views\UserView($site);
+$view = new ECommerce\Views\AddUserView($site);
 if(!$view->protect($site, $user)) {
     header("location: " . $view->getProtectRedirect());
     exit;
@@ -17,7 +17,7 @@ if(!$view->protect($site, $user)) {
 <div class="user">
 
     <?php
-    echo $view->header($site);
+    echo $view->nav($site);
     echo $view->present();
     echo $view->footer();
     ?>

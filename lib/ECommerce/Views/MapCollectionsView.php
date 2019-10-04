@@ -9,7 +9,7 @@ use ECommerce\Tables\SubCategories;
 use ECommerce\Tables\TopCategories;
 use ECommerce\Tables\TopSubMaps;
 
-class CategoriesView extends View {
+class MapCollectionsView extends View {
     private $site;
     private $topSubMap;
     private $top;
@@ -27,37 +27,14 @@ class CategoriesView extends View {
         $this->addLink("post/logout.php", "Log Out");
     }
 
-    public function presentCategories() {
-        $allTop = $this->top->getAll();
 
-        $html = "<div class='categories container'><ul>";
-
-        foreach ($allTop as $top) {
-            $top_id = $top["id"];
-            $top_name = $top["name"];
-            $html .= "<li>$top_name</li>";
-
-            $sub_ary = $this->topSubMap->getSubFor($top_id);
-
-            if(!empty($sub_ary)) {
-                $html .= "<ul>";
-                foreach ($sub_ary as $row) {
-                    $sub_id = $row['sub_id'];
-                    $sub = $this->sub->getById($sub_id);
-                    $sub_name = $sub['name'];
-                    $html .= "<li>$sub_name</li>";
-                }
-                $html .= "</ul>";
-            }
-
-        }
-        $html .= "</ul></div>";
-        return $html;
-    }
 
     public function present() {
-        echo $this->presentCategories();
 
+        echo "<div class='row-container'>";
+        echo $this->sideNav();
+        echo "<div class='col-main'>";
+        echo "<h1 class='center'>Map Collections</h1>";
         echo "<div class='flex-container'>";
         echo $this->presentTop();
         echo $this->presentMap();
@@ -65,11 +42,7 @@ class CategoriesView extends View {
         echo "</div>";
 
         echo $this->addMap();
-
-        //echo "<div class='flex-container full'>";
-        //echo $this->addTop();
-        //echo $this->addSub();
-        //echo "</div>";
+        echo "</div></div>";
     }
 
     public function presentTop() {
@@ -117,65 +90,6 @@ class CategoriesView extends View {
         }
         $html .= '</table></div>';
         return $html;
-    }
-
-    public function addTop() {
-        return <<<HTML
-<form id="add-top-cat">
-    <fieldset>
-        <legend>Top Category</legend>
-        <p>
-            <label for="name">Name</label><br>
-            <input type="text" id="name" name="name" placeholder="Name">
-        </p>
-        <p>
-            <label for="description">Description</label><br>
-            <textarea id="description" name="description" placeholder="Description..."></textarea>
-        </p>
-        <p>
-            <label for="visible">Visible</label>
-            <select id="visible" name="visible">
-                <option value="true">True</option>
-                <option value="false">False</option>
-            </select>
-        </p>
-       	<p>
-			<input type="submit" value="OK">
-		</p>
-    </fieldset>
-</form>
-HTML;
-    }
-
-    public function addSub() {
-        return <<<HTML
-<form id="add-sub-cat" name="add-sub-cat">
-    <fieldset>
-        <legend>Sub Category</legend>
-        <p>
-            <label for="name">Name</label><br>
-            <input type="text" id="name" name="name" placeholder="Name">
-        </p>
-        <p>
-            <label for="description">Description</label><br>
-            <textarea id="description" name="description" placeholder="Description..."></textarea>
-        </p>
-        <p>
-            <label for="file">Select Image to upload</label>
-            <input type="file" id="file" name="file">
-        <p>
-            <label for="visible">Visible</label>
-            <select id="visible" name="visible">
-                <option value="1">True</option>
-                <option value="0">False</option>
-            </select>
-        </p>
-       	<p>
-			<input type="submit" value="Upload Image" name="submit">
-		</p>
-    </fieldset>
-</form>
-HTML;
     }
 
     public function addMap() {

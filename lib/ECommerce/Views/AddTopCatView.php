@@ -7,7 +7,7 @@ namespace ECommerce\Views;
 use ECommerce\Site;
 use ECommerce\Tables\TopCategories;
 
-class TopCatView extends View {
+class AddTopCatView extends View {
 
     private $site;
     private $topCategories;
@@ -24,40 +24,17 @@ class TopCatView extends View {
     }
 
     public function present() {
-        echo $this->presentTopCategories();
-        echo $this->AddTop();
+        echo "<div class='row-container'>";
+        echo $this->sideNav();
+        echo "<div class='col-main'>";
+        echo "<h1 class='center'>Add Top-Category</h1>";
+        echo $this->addTop();
+        echo "</div></div>";
     }
 
-    public function presentTopCategories() {
-        $all = $this->topCategories->getAll();
 
-        $html = <<<HTML
-<table>
-    <tr>
-        <th></th>
-        <th>Name</th>
-		<th>Description</th>
-		<th>Visible</th>
-	</tr>
-HTML;
-        foreach ($all as $top) {
-            $name = $top['name'];
-            $description = $top['description'];
-            $visible = $top['visible'];
-            $html .= <<<HTML
-		<tr>
-			<td><input type="radio" name="top-cat"></td>
-			<td>$name</td>
-			<td>$description</td>
-			<td>$visible</td>
-		</tr>
-HTML;
-        }
-        $html .= '</table>';
-        return $html;
-    }
 
-    public function AddTop() {
+    public function addTop() {
         return <<<HTML
 <form id="add-top-cat">
     <fieldset>

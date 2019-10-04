@@ -36,3 +36,47 @@ nav {
     top: 0;
   }
 }
+
+div.row-container {
+
+  display: flex;
+
+  div.sideNav {
+    background-color: $msu;
+    width: 15%;
+
+    p {
+      margin: 0;
+
+      a {
+        padding: 0.5em;
+        text-decoration: none;
+        font-size: 1.2em;
+        color: #ffffff;
+        display: block;
+      }
+
+      a:hover {
+        color: #818181;
+      }
+    }
+
+    ul.sub > li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: #ffffff;
+      }
+
+      a:hover {
+        color: #818181;
+      }
+    }
+  }
+
+  div.col-main {
+    width: 85%;
+    background-color: $background;
+  }
+}

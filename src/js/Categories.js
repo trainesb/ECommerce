@@ -10,7 +10,7 @@ export const Categories = function() {
         var sub_id = $("#sub_id").val();
 
         $.ajax({
-            url: "post/categories.php",
+            url: "post/map-collections.php",
             data: {"top_id" : top_id, "sub_id" : sub_id},
             method: "POST",
             success: function(data) {

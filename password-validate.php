@@ -13,7 +13,7 @@ $view = new ECommerce\Views\PasswordValidateView($site, $_GET);
 <div class="password">
 
     <?php
-    echo $view->header($site);
+    echo $view->nav($site);
 
     echo $view->present();
 

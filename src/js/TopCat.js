@@ -7,7 +7,7 @@ export const TopCat = function () {
         event.preventDefault();
 
         $.ajax({
-            url: "post/top-cat.php",
+            url: "post/add-top-cat.php",
             data: $(this).serialize(),
             method: "POST",
             success: function(data) {

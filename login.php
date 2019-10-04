@@ -12,7 +12,7 @@ $view = new ECommerce\Views\LoginView($site, $_COOKIE);
 <body>
 <div class="login">
     <?php
-    echo $view->header($site);
+    echo $view->nav($site);
     echo $view->presentForm();
     echo $view->footer();
     ?>
