@@ -13,7 +13,7 @@ $view = new ECommerce\Views\HomeView($site, $user);
 <body>
 <div class="mainpage">
     <?php
-    echo $view->header($site);
+    echo $view->nav($site);
     echo $view->presentSub();
     echo $view->footer();
     ?>

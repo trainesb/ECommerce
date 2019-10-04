@@ -38,7 +38,7 @@ class View {
 HTML;
     }
 
-    public function header($site) {
+    public function nav($site) {
         $html = <<<HTML
 <nav>
     <ul class="left">
@@ -56,21 +56,8 @@ HTML;
             $html .= '</ul>';
         }
 
-        $additional = $this->headerAdditional();
-
         $html .= '</nav>';
-
-        $html .= <<<HTML
-<header class="main">
-    <h1> $this->title</h1>
-    $additional
-</header>
-HTML;
         return $html;
-    }
-
-    protected function headerAdditional() {
-        return '';
     }
 
     public function footer() {

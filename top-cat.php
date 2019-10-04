@@ -17,7 +17,7 @@ if(!$view->protect($site, $user)) {
 <body>
 <div class="add-top-cat">
     <?php
-    echo $view->header($site);
+    echo $view->nav($site);
     echo $view->present();
     echo $view->footer();
     ?>

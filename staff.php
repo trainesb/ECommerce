@@ -17,8 +17,9 @@ if(!$view->protect($site, $user)) {
 <body>
 <div class="staff">
     <?php
-    echo $view->header($site);
-    echo $view->presentBtns();
+    echo $view->nav($site);
+
+    echo $view->present();
     echo $view->footer();
     ?>
 </body>

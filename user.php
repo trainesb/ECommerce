@@ -17,7 +17,7 @@ if(!$view->protect($site, $user)) {
 <div class="user">
 
     <?php
-    echo $view->header($site);
+    echo $view->nav($site);
     echo $view->present();
     echo $view->footer();
     ?>
