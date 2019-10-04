@@ -71,7 +71,7 @@ class CollectionsView extends View {
         $all = $this->topCategories->getAll();
 
         $html = <<<HTML
-<p><a href=".\add-top-cat.php">Add Top-Category</a></p>
+<h1 class="center">Top-Category</h1>
 <table>
     <tr>
         <th></th>
@@ -101,7 +101,7 @@ HTML;
         $all = $this->subCategories->getAll();
 
         $html = <<<HTML
-<p><a href=".\add-sub-cat.php">Add Sub-Category</a></p>
+<h1 class="center">Sub-Category</h1>
 <table>
     <tr>
         <th></th>

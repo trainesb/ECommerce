@@ -18,7 +18,6 @@ class AddTopCatView extends View {
 
         $this->setTitle("Add Top Category");
 
-        $this->addLink("./staff.php", "Staff");
         $this->addLink("./profile.php", "Profile");
         $this->addLink("post/logout.php", "Log Out");
     }

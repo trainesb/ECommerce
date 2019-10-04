@@ -43,7 +43,7 @@ div.row-container {
 
   div.sideNav {
     background-color: $msu;
-    width: 15%;
+    width: 21%;
 
     p {
       margin: 0;
@@ -57,20 +57,25 @@ div.row-container {
       }
 
       a:hover {
-        color: #818181;
+        background-color: green;
       }
     }
 
-    ul.sub > li {
-      list-style: none;
+    ul.sub {
+      padding-inline-start: 1em;
+      margin: 0;
 
-      a {
-        text-decoration: none;
-        color: #ffffff;
-      }
+      li {
+        list-style: none;
 
-      a:hover {
-        color: #818181;
+        a {
+          text-decoration: none;
+          color: #ffffff;
+        }
+
+        a:hover {
+          background-color: green;
+        }
       }
     }
   }

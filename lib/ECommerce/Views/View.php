@@ -84,7 +84,12 @@ HTML;
     <ul class="sub" hidden>
         <li><a href=".\users.php">All Users</a></li>
         <li><a href=".\add-user.php">Add User</a></li>
-</ul>
+    </ul>
+    
+    <p class="warehouses"><a>Warehouses</a></p>
+    <ul class="sub" hidden>
+        <li><a href=".\ali-express.php">AliExpress</a></li>
+    </ul>
    
 </div>
 HTML;

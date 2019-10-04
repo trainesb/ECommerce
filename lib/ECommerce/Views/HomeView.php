@@ -27,14 +27,6 @@ class HomeView extends View {
         }
     }
 
-    protected function headerAdditional() {
-        return <<<HTML
-<p>Welcome to (Business Name)!</p>
-<p>Business Info & Description Here...</p>
-<br>
-HTML;
-    }
-
     public function presentSub() {
         $all = $this->subCat->getAll();
         $html = "<div class='container'>";

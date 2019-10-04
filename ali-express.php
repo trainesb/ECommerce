@@ -1,7 +1,6 @@
 <?php
 require 'lib/site.inc.php';
-$view = new ECommerce\Views\StaffView($site);
-$scrapper = new ECommerce\Scraper();
+$view = new ECommerce\Views\AliExpressView($site);
 
 if(!$view->protect($site, $user)) {
     header("location: " . $view->getProtectRedirect());
