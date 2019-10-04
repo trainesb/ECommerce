@@ -1,6 +1,7 @@
 <?php
 require 'lib/site.inc.php';
-$view = new ECommerce\Views\UserView($site);
+$view = new ECommerce\Views\AddSubCatView($site);
+
 if(!$view->protect($site, $user)) {
     header("location: " . $view->getProtectRedirect());
     exit;
@@ -14,15 +15,11 @@ if(!$view->protect($site, $user)) {
 </head>
 
 <body>
-<div class="user">
-
+<div class="add-sub-cat">
     <?php
     echo $view->nav($site);
     echo $view->present();
     echo $view->footer();
     ?>
-
-</div>
-
 </body>
 </html>

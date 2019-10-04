@@ -7,7 +7,7 @@ export const Product = function () {
         event.preventDefault();
 
         $.ajax({
-            url: "post/product.php",
+            url: "post/add-product.php",
             data: $(this).serialize(),
             method: "POST",
             success: function(data) {

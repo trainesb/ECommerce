@@ -7,7 +7,7 @@ namespace ECommerce\Views;
 use ECommerce\Site;
 use ECommerce\Tables\Products;
 
-class ProductView extends View {
+class AddProductView extends View {
 
     private $site;
     private $products;
@@ -18,18 +18,21 @@ class ProductView extends View {
 
         $this->setTitle("Add Product");
 
-        $this->addLink("./staff.php", "Staff");
         $this->addLink("./profile.php", "Profile");
         $this->addLink("post/logout.php", "Log Out");
     }
 
     public function present() {
-        echo $this->presentProducts();
-        echo $this->presentAddProduct();
+        echo "<div class='row-container'>";
+        echo $this->sideNav();
+        echo "<div class='col-main'>";
+        echo $this->addProduct();
+        echo "</div></div>";
     }
 
-    public function presentAddProduct() {
+    public function addProduct() {
         return <<<HTML
+<h1 class="center">Add Product</h1>
 <form id="add-product" method="post" enctype="multipart/form-data">
     <fieldset>
         <legend>Product</legend>
@@ -71,41 +74,5 @@ class ProductView extends View {
 HTML;
     }
 
-    public function presentProducts() {
-        $all = $this->products->getAll();
 
-        $html = <<<HTML
-<table>
-    <tr>
-        <th></th>
-        <th>SKU</th>
-        <th>Title</th>
-        <th>Price</th>
-        <th>Sold Out</th>
-		<th>Description</th>
-		<th>Visible</th>
-	</tr>
-HTML;
-        foreach ($all as $product) {
-            $sku = $product['sku'];
-            $title = $product['title'];
-            $price = $product['price'];
-            $soldout = $product['soldout'];
-            $description = $product['description'];
-            $visible = $product['visible'];
-            $html .= <<<HTML
-		<tr>
-			<td><input type="radio" name="product"></td>
-			<td>$sku</td>
-			<td>$title</td>
-			<td>$price</td>
-			<td>$soldout</td>
-			<td>$description</td>
-			<td>$visible</td>
-		</tr>
-HTML;
-        }
-        $html .= '</table>';
-        return $html;
-    }
 }

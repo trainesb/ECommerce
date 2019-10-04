@@ -37,44 +37,46 @@ nav {
   }
 }
 
-div.sideNav {
-  background-color: $msu;
-  display: inline-block;
-  width: 15%;
-  min-height: 21.6em;
-  float: left;
+div.row-container {
 
-  p {
-    margin: 0;
+  display: flex;
 
-    a {
-      padding: 0.5em;
-      text-decoration: none;
-      font-size: 1.2em;
-      color: #ffffff;
-      display: block;
+  div.sideNav {
+    background-color: $msu;
+    width: 15%;
+
+    p {
+      margin: 0;
+
+      a {
+        padding: 0.5em;
+        text-decoration: none;
+        font-size: 1.2em;
+        color: #ffffff;
+        display: block;
+      }
+
+      a:hover {
+        color: #818181;
+      }
     }
 
-    a:hover {
-      color: #818181;
+    ul.sub > li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: #ffffff;
+      }
+
+      a:hover {
+        color: #818181;
+      }
     }
   }
 
-  ul.sub > li {
-    list-style: none;
-
-    a {
-      text-decoration: none;
-      color: #ffffff;
-    }
-
-    a:hover {
-      color: #818181;
-    }
+  div.col-main {
+    width: 85%;
+    background-color: $background;
   }
-}
-
-div.sideNav + div {
-  width: 85%;
-  display: inline-block;
 }

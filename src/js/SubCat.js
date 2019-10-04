@@ -13,7 +13,7 @@ export const SubCat = function () {
         form_data.append('visible', $("#visible").val());
 
         $.ajax({
-            url: "post/sub-cat.php",
+            url: "post/add-sub-cat.php",
             data: form_data,
             processData: false,
             contentType: false,

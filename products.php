@@ -1,6 +1,6 @@
 <?php
 require 'lib/site.inc.php';
-$view = new ECommerce\Views\ProductView($site);
+$view = new ECommerce\Views\ProductsView($site);
 
 if(!$view->protect($site, $user)) {
     header("location: " . $view->getProtectRedirect());
@@ -21,5 +21,6 @@ if(!$view->protect($site, $user)) {
     echo $view->present();
     echo $view->footer();
     ?>
+</div>
 </body>
 </html>
