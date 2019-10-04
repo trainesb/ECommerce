@@ -11104,6 +11104,54 @@ module.exports = function (list, options) {
 
 /***/ }),
 
+/***/ "./src/js/AliExpress.js":
+/*!******************************!*\
+  !*** ./src/js/AliExpress.js ***!
+  \******************************/
+/*! exports provided: Ali */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Ali", function() { return Ali; });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _parse_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parse_json */ "./src/js/parse_json.js");
+
+
+
+const Ali = function () {
+
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()("div.col-main > a").click(function (event) {
+       event.preventDefault();
+
+       var name = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).text();
+       var src = "https:" + jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr("href");
+       console.log(name);
+       console.log(src);
+
+        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
+            url: "post/ali-express.php",
+            data: {src : src},
+            method: "POST",
+            success: function(data) {
+                var json = Object(_parse_json__WEBPACK_IMPORTED_MODULE_1__["parse_json"])(data);
+                console.log(json);
+                if(json.ok) {
+                    console.log(json);
+                } else {
+                    alert(json.message);
+                }
+            },
+            error: function(xhr, status, error) {
+                alert("Error: " + error);
+            }
+        });
+    });
+};
+
+/***/ }),
+
 /***/ "./src/js/Categories.js":
 /*!******************************!*\
   !*** ./src/js/Categories.js ***!
@@ -11398,8 +11446,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Product__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Product */ "./src/js/Product.js");
 /* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Categories */ "./src/js/Categories.js");
 /* harmony import */ var _Staff__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Staff */ "./src/js/Staff.js");
-/* harmony import */ var _scss_Home_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../scss/Home.scss */ "./src/scss/Home.scss");
-/* harmony import */ var _scss_Home_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_scss_Home_scss__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _AliExpress__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./AliExpress */ "./src/js/AliExpress.js");
+/* harmony import */ var _scss_Home_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../scss/Home.scss */ "./src/scss/Home.scss");
+/* harmony import */ var _scss_Home_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_scss_Home_scss__WEBPACK_IMPORTED_MODULE_8__);
+
 
 
 
@@ -11412,6 +11462,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+   new _AliExpress__WEBPACK_IMPORTED_MODULE_7__["Ali"]();
    new _Staff__WEBPACK_IMPORTED_MODULE_6__["Staff"]();
    new _Login__WEBPACK_IMPORTED_MODULE_1__["Login"]();
    new _TopCat__WEBPACK_IMPORTED_MODULE_2__["TopCat"]();

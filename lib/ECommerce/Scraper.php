@@ -2,20 +2,18 @@
 
 
 namespace ECommerce;
-require_once './lib/simple_html_dom.php';
 
 class Scraper {
 
     private $html;
 
-    public function __construct() {
-        $url = "https://best.aliexpress.com/";
+    public function __construct($url) {
         $this->html = file_get_html($url);
     }
 
-    public function stripCat() {
+    public function strip($element) {
         $rtrn = array();
-        foreach($this->html->find('dt[class=cate-name] span a') as $cat) {
+        foreach($this->html->find($element) as $cat) {
             array_push($rtrn, $cat);
         }
         return $rtrn;

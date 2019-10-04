@@ -12,7 +12,7 @@ class AliExpressView extends View {
     private $scrapper;
 
     public function __construct(Site $site) {
-        $this->scrapper = new Scraper();
+        $this->scrapper = new Scraper("https://best.aliexpress.com/");
 
         $this->setTitle("Ali Express");
 
@@ -30,7 +30,7 @@ class AliExpressView extends View {
     }
 
     public function categories() {
-        $all = $this->scrapper->stripCat();
+        $all = $this->scrapper->strip('dt[class=cate-name] span a');
         $html = "";
         foreach ($all as $cat) {
             $html .= $cat . "<br>";

@@ -1,5 +1,7 @@
 <?php
 require 'lib/site.inc.php';
+require 'lib/simple_html_dom.php';
+
 $view = new ECommerce\Views\AliExpressView($site);
 
 if(!$view->protect($site, $user)) {
