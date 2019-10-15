@@ -9,11 +9,8 @@ use ECommerce\Site;
 
 class AliExpressView extends View {
 
-    private $scrapper;
 
     public function __construct(Site $site) {
-        $this->scrapper = new Scraper("https://best.aliexpress.com/");
-
         $this->setTitle("Ali Express");
 
         $this->addLink("./profile.php", "Profile");
@@ -25,16 +22,7 @@ class AliExpressView extends View {
         echo $this->sideNav();
         echo "<div class='col-main'>";
         echo "<h1 class='center'>Ali Express</h1>";
-        echo $this->categories();
         echo "</div></div>";
     }
 
-    public function categories() {
-        $all = $this->scrapper->strip('dt[class=cate-name] span a');
-        $html = "";
-        foreach ($all as $cat) {
-            $html .= $cat . "<br>";
-        }
-        return $html;
-    }
 }

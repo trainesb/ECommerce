@@ -11104,54 +11104,6 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ "./src/js/AliExpress.js":
-/*!******************************!*\
-  !*** ./src/js/AliExpress.js ***!
-  \******************************/
-/*! exports provided: Ali */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Ali", function() { return Ali; });
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _parse_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parse_json */ "./src/js/parse_json.js");
-
-
-
-const Ali = function () {
-
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()("div.col-main > a").click(function (event) {
-       event.preventDefault();
-
-       var name = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).text();
-       var src = "https:" + jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr("href");
-       console.log(name);
-       console.log(src);
-
-        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
-            url: "post/ali-express.php",
-            data: {src : src},
-            method: "POST",
-            success: function(data) {
-                var json = Object(_parse_json__WEBPACK_IMPORTED_MODULE_1__["parse_json"])(data);
-                console.log(json);
-                if(json.ok) {
-                    console.log(json);
-                } else {
-                    alert(json.message);
-                }
-            },
-            error: function(xhr, status, error) {
-                alert("Error: " + error);
-            }
-        });
-    });
-};
-
-/***/ }),
-
 /***/ "./src/js/Categories.js":
 /*!******************************!*\
   !*** ./src/js/Categories.js ***!
@@ -11288,6 +11240,66 @@ const Product = function () {
 
 /***/ }),
 
+/***/ "./src/js/Scraper.js":
+/*!***************************!*\
+  !*** ./src/js/Scraper.js ***!
+  \***************************/
+/*! exports provided: Scraper */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Scraper", function() { return Scraper; });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _parse_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parse_json */ "./src/js/parse_json.js");
+
+
+const Scraper = function () {
+
+
+
+    var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
+    function doCORSRequest(options, printResult) {
+        var x = new XMLHttpRequest();
+        x.open(options.method, cors_api_url + options.url);
+        x.onload = x.onerror = function() {
+            printResult(
+                options.method + ' ' + options.url + '\n' +
+                x.status + ' ' + x.statusText + '\n\n' +
+                (x.responseText || '')
+            );
+        };
+        x.send(options.data);
+    }
+
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()("#Ali").click(function (e) {
+        e.preventDefault();
+
+        var urlField = 'https://www.aliexpress.com/';
+        doCORSRequest({
+            method: 'GET',
+            url: urlField,
+            data: '',
+        }, function printResult(result) {
+            console.log(result);
+
+            var categories = jquery__WEBPACK_IMPORTED_MODULE_0___default()("#home-firstscreen > div.container > div > div.categories > div > div.categories-list-box > dl.cl-item > dt").html(result);
+
+            console.log(categories);
+
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()("#Ali-test").text(categories);
+        });
+        if (typeof console === 'object') {
+            console.log('// To test a local CORS Anywhere server, set cors_api_url. For example:');
+            console.log('cors_api_url = "http://localhost:8080/"');
+        }
+    });
+};
+
+
+/***/ }),
+
 /***/ "./src/js/Staff.js":
 /*!*************************!*\
   !*** ./src/js/Staff.js ***!
@@ -11361,7 +11373,7 @@ const SubCat = function () {
         form_data.append('visible', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#visible").val());
 
         jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
-            url: "post/add-sub-cat.php",
+            url: "post/sub-cat.php",
             data: form_data,
             processData: false,
             contentType: false,
@@ -11407,7 +11419,7 @@ const TopCat = function () {
         event.preventDefault();
 
         jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
-            url: "post/add-top-cat.php",
+            url: "post/top-cat.php",
             data: jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).serialize(),
             method: "POST",
             success: function(data) {
@@ -11446,7 +11458,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Product__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Product */ "./src/js/Product.js");
 /* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Categories */ "./src/js/Categories.js");
 /* harmony import */ var _Staff__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Staff */ "./src/js/Staff.js");
-/* harmony import */ var _AliExpress__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./AliExpress */ "./src/js/AliExpress.js");
+/* harmony import */ var _Scraper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Scraper */ "./src/js/Scraper.js");
 /* harmony import */ var _scss_Home_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../scss/Home.scss */ "./src/scss/Home.scss");
 /* harmony import */ var _scss_Home_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_scss_Home_scss__WEBPACK_IMPORTED_MODULE_8__);
 
@@ -11462,14 +11474,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-   new _AliExpress__WEBPACK_IMPORTED_MODULE_7__["Ali"]();
    new _Staff__WEBPACK_IMPORTED_MODULE_6__["Staff"]();
    new _Login__WEBPACK_IMPORTED_MODULE_1__["Login"]();
    new _TopCat__WEBPACK_IMPORTED_MODULE_2__["TopCat"]();
    new _SubCat__WEBPACK_IMPORTED_MODULE_3__["SubCat"]();
    new _Product__WEBPACK_IMPORTED_MODULE_4__["Product"]();
+   new _Scraper__WEBPACK_IMPORTED_MODULE_7__["Scraper"]();
    new _Categories__WEBPACK_IMPORTED_MODULE_5__["Categories"]();
 });
+
 
 /***/ }),
 

@@ -15,7 +15,6 @@ class User {
     private $email;		// Email address
     private $name; 		// Name as last, first
     private $phone; 	// Phone number
-    private $address;	// User address
     private $notes;		// Notes for this user
     private $joined;	// When user was added
     private $role;		// User role
@@ -25,7 +24,6 @@ class User {
         $this->email = $row['email'];
         $this->name = $row['name'];
         $this->phone = $row['phone'];
-        $this->address = $row['address'];
         $this->notes = $row['notes'];
         $this->joined = strtotime($row['joined']);
         $this->role = $row['role'];
@@ -42,8 +40,6 @@ class User {
 
     public function setPhone($phone) { $this->phone = $phone; }
 
-    public function setAddress($address) { $this->address = $address; }
-
     public function setNotes($notes) { $this->notes = $notes; }
 
     public function setRole($role) { $this->role = $role; }
@@ -55,8 +51,6 @@ class User {
     public function getName() { return $this->name; }
 
     public function getPhone() { return $this->phone; }
-
-    public function getAddress() { return $this->address; }
 
     public function getNotes() { return $this->notes; }
 

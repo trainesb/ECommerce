@@ -6,16 +6,16 @@ import {SubCat} from "./SubCat";
 import {Product} from "./Product";
 import {Categories} from "./Categories";
 import {Staff} from "./Staff";
-import {Ali} from "./AliExpress";
+import {Scraper} from "./Scraper";
 
 import '../scss/Home.scss';
 
 $(document).ready(function () {
-   new Ali();
    new Staff();
    new Login();
    new TopCat();
    new SubCat();
    new Product();
+   new Scraper();
    new Categories();
 });

@@ -1,6 +1,5 @@
 <?php
 require 'lib/site.inc.php';
-require 'lib/simple_html_dom.php';
 
 $view = new ECommerce\Views\AliExpressView($site);
 
@@ -18,11 +17,14 @@ if(!$view->protect($site, $user)) {
 
 <body>
 <div class="staff">
-    <?php
-    echo $view->nav($site);
+    <?php echo $view->nav($site); ?>
 
-    echo $view->present();
-    echo $view->footer();
-    ?>
+    <button id="ali-test">Ali</button>
+
+    <div id="webContent">
+
+    </div>
+
+    <?php echo $view->footer(); ?>
 </body>
 </html>
