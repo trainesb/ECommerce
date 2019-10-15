@@ -6,39 +6,59 @@ namespace ECommerce\Controllers;
 
 use ECommerce\Site;
 use ECommerce\Tables\SubCategories;
+use ECommerce\Tables\TopCategories;
+use ECommerce\Tables\TopSubMaps;
 
-class SubCatController extends Controller {
+class CategoryController extends Controller {
 
-    private $post;
-    protected $site;
     private $files;
+    private $post;
 
     public function __construct(Site $site, $post, $files) {
         parent::__construct($site);
-
-        $this->site = $site;
-        $this->post = $post;
         $this->files = $files;
+        $this->post = $post;
 
-        if($this->uploadImg()) {
-            $name = $post['name'];
-            $description = $post['description'];
-            $visible = $post['visible'];
-            $img = "dist/img/sub-cat/".basename($this->files["file"]["name"]);
+        $visible = $post['visible'];
+        $name = $post['name'];
+        $description = $post['description'];
 
-            $sub = new SubCategories($site);
-            if($sub->add($name, $description, $visible, $img)) {
+        $img = "";
+        if(!empty($files) && $this->uploadImg()) {
+            $img = "dist/img/categories/".$this->post['type']."/" . basename($this->files["file"]["name"]);
+        }
+
+        if($post['type'] === 'top') {
+
+            $top = new TopCategories($site);
+
+            if($top->add($name, $description, $visible, $img)) {
                 $this->result = json_encode(["ok" => true]);
             } else {
-                $this->result = json_encode(["ok" => false]);
+                $this->result = json_encode(["ok" => false, "message" => "Failed to add Category!"]);
+            }
+        } else {
+            $sub = new SubCategories($site);
+
+            if($sub->add($name, $description, $visible, $img)) {
+
+                $topSub = new TopSubMaps($site);
+                $top_id = $post['parentID'];
+                $sub_id = $sub->getIdByName($name)['id'];
+
+                if ($topSub->add($top_id, $sub_id)) {
+                    $this->result = json_encode(["ok" => true]);
+                } else {
+                    $this->result = json_encode(["ok" => false, "message" => "Failed to add category map"]);
+                }
+            } else {
+                $this->result = json_encode(["ok" => false, "message" => "Failed to add Category!"]);
             }
         }
     }
 
-
-
     public function uploadImg() {
-        $target_dir = dirname(__FILE__)."/../../../dist/img/sub-cat/";
+        $target_dir = dirname(__FILE__)."/../../../dist/img/categories/".$this->post['type']."/";
         $target_file = $target_dir . basename($this->files["file"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 

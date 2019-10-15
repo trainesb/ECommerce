@@ -95,7 +95,7 @@
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "body {\n  background-color: #bbb;\n  color: black; }\n\nh1, h2 {\n  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; }\n\nbody > div {\n  background-color: white;\n  max-width: 60em;\n  min-width: 40em;\n  margin: 0 auto; }\n\np {\n  margin: 1em 2em; }\n\np.date {\n  float: right; }\n\na:visited, a:link {\n  color: #88f; }\n\n.center {\n  text-align: center; }\n\nform {\n  width: 22em;\n  margin: 1em auto; }\n  form p {\n    margin: 0.5em 0; }\n  form input[type=\"password\"], form input[type=\"email\"] {\n    width: 20em; }\n  form input[type=\"submit\"] {\n    width: 5em; }\n  form textarea {\n    width: 100%;\n    height: 6em; }\n  form a {\n    padding-left: 0.5em;\n    font-size: 0.85em; }\n  form p.msg {\n    text-align: center;\n    color: red;\n    font-size: 0.9em;\n    font-style: italic; }\n\nform.table p {\n  text-align: center; }\n\nform.table input[type=\"submit\"] {\n  width: 8em;\n  margin: 0 1em; }\n\nnav {\n  position: relative;\n  background-color: #18453B;\n  color: white;\n  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; }\n  nav ul {\n    font-size: 1.2em;\n    list-style: none;\n    margin: 0;\n    padding: 0; }\n    nav ul li {\n      display: inline-block; }\n    nav ul li a {\n      display: block;\n      padding: 0.5em 0.5em; }\n    nav ul a:hover {\n      background-color: green; }\n    nav ul a:visited, nav ul a:link {\n      color: white;\n      text-decoration: none; }\n  nav ul.right {\n    position: absolute;\n    right: 0;\n    top: 0; }\n\ndiv.row-container {\n  display: flex; }\n  div.row-container div.sideNav {\n    background-color: #18453B;\n    width: 21%; }\n    div.row-container div.sideNav p {\n      margin: 0; }\n      div.row-container div.sideNav p a {\n        padding: 0.5em;\n        text-decoration: none;\n        font-size: 1.2em;\n        color: #ffffff;\n        display: block; }\n      div.row-container div.sideNav p a:hover {\n        background-color: green; }\n    div.row-container div.sideNav ul.sub {\n      padding-inline-start: 1em;\n      margin: 0; }\n      div.row-container div.sideNav ul.sub li {\n        list-style: none; }\n        div.row-container div.sideNav ul.sub li a {\n          text-decoration: none;\n          color: #ffffff; }\n        div.row-container div.sideNav ul.sub li a:hover {\n          background-color: green; }\n  div.row-container div.col-main {\n    width: 85%;\n    background-color: white; }\n\nheader {\n  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;\n  padding: 1em 0; }\n  header h1 {\n    font-size: 3em;\n    text-align: center; }\n    header h1 img {\n      width: 2.12em;\n      height: 2em;\n      vertical-align: middle; }\n  header p {\n    font-size: 1.2em;\n    margin: 1em 5em;\n    text-align: center;\n    position: relative; }\n\nfooter {\n  background-color: #18453B;\n  color: white;\n  text-align: center; }\n  footer p {\n    padding: 0.25em 0;\n    margin-top: 0; }\n\ndiv.staff h3 {\n  text-align: center; }\n\ndiv.staff div.menu {\n  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;\n  font-size: 2em; }\n  div.staff div.menu p {\n    text-align: center;\n    margin: 1em 0; }\n  div.staff div.menu img {\n    vertical-align: middle;\n    height: 100px;\n    width: auto; }\n\ndiv.staff div.header {\n  margin-left: 15em; }\n\ndiv.staff div.staff-btns {\n  text-align: center; }\n  div.staff div.staff-btns p {\n    display: inline; }\n    div.staff div.staff-btns p a {\n      text-decoration: none;\n      color: #000000; }\n    div.staff div.staff-btns p a:hover {\n      text-decoration: underline;\n      color: #18453B; }\n\ndiv.mainpage header a {\n  padding: 0.5em;\n  background-color: #4c4;\n  text-decoration: none;\n  color: white;\n  transition: all 0.1s;\n  -webkit-transition: all 0.1s;\n  position: relative;\n  padding: 0.5em 2em;\n  border-radius: 0.4em;\n  border-bottom: 5px solid #262;\n  text-shadow: 0px 2px #262; }\n\ndiv.mainpage div.container {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-around;\n  align-items: center; }\n  div.mainpage div.container div.sub-card {\n    width: 33%; }\n    div.mainpage div.container div.sub-card img {\n      width: 100%;\n      height: auto; }\n\ndiv.mainpage section.testimonials {\n  background-color: #eee;\n  margin: 1em 5em;\n  padding: 1em 2em;\n  display: table; }\n  div.mainpage section.testimonials h2 {\n    display: table-row;\n    margin: 0 0 1.5em 0; }\n  div.mainpage section.testimonials div.left {\n    width: 45%;\n    display: table-cell;\n    padding-right: 0.25em; }\n  div.mainpage section.testimonials div.right {\n    width: 45%;\n    display: table-cell;\n    padding-left: 0.25em; }\n  div.mainpage section.testimonials blockquote {\n    padding: 0;\n    margin: 0; }\n    div.mainpage section.testimonials blockquote p {\n      padding: 0;\n      margin: 0.5em 0; }\n\ndiv.mainpage form.request {\n  padding: 0 5em; }\n  div.mainpage form.request fieldset {\n    margin: 1em 5em; }\n  div.mainpage form.request p {\n    margin: 0.5em 0; }\n  div.mainpage form.request input[type=\"text\"], div.mainpage form.request input[type=\"email\"] {\n    width: 20em; }\n  div.mainpage form.request textarea {\n    width: 100%;\n    height: 6em; }\n\ntable {\n  margin-left: auto;\n  margin-right: auto;\n  -moz-box-shadow: 6pt 6px 10pt #888;\n  -webkit-box-shadow: 6pt 6px 10pt #888;\n  box-shadow: 6pt 6px 10pt #888;\n  border-left: 1px solid #e0e0e0;\n  border-collapse: collapse; }\n\ntable th {\n  color: white;\n  background-color: #18453B;\n  background: -webkit-gradient(linear, left top, left bottom, from(#18453B), to(#73d189));\n  background: -webkit-linear-gradient(top, #18453B, #73d189);\n  background: -moz-linear-gradient(top, #18453B, #73d189);\n  background: -ms-linear-gradient(top, #18453B, #73d189);\n  background: -o-linear-gradient(top, #18453B, #73d189);\n  text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;\n  border-right: 1px solid #C1DAD7;\n  border-bottom: 1px solid #C1DAD7;\n  border-top: 1px solid #C1DAD7;\n  text-align: left;\n  font-family: Helvetica, Arial, Sans-Serif;\n  text-decoration: none;\n  padding: 0.1em 0.5em; }\n\ntable td {\n  border-right: 1px solid #C1DAD7;\n  border-bottom: 1px solid #C1DAD7;\n  background: white;\n  padding: 0.1em 0.5em;\n  color: #4f6b72; }\n\nth a:link {\n  color: #F5F3EB; }\n\nth a:visited {\n  color: #E3DCC5; }\n\nth a:hover {\n  color: #ffffff; }\n\ndiv.flex-container {\n  display: flex;\n  justify-content: space-around;\n  align-items: center; }\n\ndiv.flex-container.full {\n  width: 100%; }\n\ndiv.categories.container {\n  margin: auto;\n  width: 30%; }\n", ""]);
+exports.push([module.i, "body {\n  background-color: #bbb;\n  color: black; }\n\nh1, h2 {\n  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; }\n\nbody > div {\n  background-color: white;\n  max-width: 60em;\n  min-width: 40em;\n  margin: 0 auto; }\n\np {\n  margin: 1em 2em; }\n\np.date {\n  float: right; }\n\na:visited, a:link {\n  color: #88f; }\n\n.center {\n  text-align: center; }\n\nform {\n  width: 22em;\n  margin: 1em auto; }\n  form p {\n    margin: 0.5em 0; }\n  form input[type=\"password\"], form input[type=\"email\"] {\n    width: 20em; }\n  form input[type=\"submit\"] {\n    width: 5em; }\n  form textarea {\n    width: 100%;\n    height: 6em; }\n  form a {\n    padding-left: 0.5em;\n    font-size: 0.85em; }\n  form p.msg {\n    text-align: center;\n    color: red;\n    font-size: 0.9em;\n    font-style: italic; }\n\nform.table p {\n  text-align: center; }\n\nform.table input[type=\"submit\"] {\n  width: 8em;\n  margin: 0 1em; }\n\nnav {\n  position: relative;\n  background-color: #18453B;\n  color: white;\n  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; }\n  nav ul {\n    font-size: 1.2em;\n    list-style: none;\n    margin: 0;\n    padding: 0; }\n    nav ul li {\n      display: inline-block; }\n    nav ul li a {\n      display: block;\n      padding: 0.5em 0.5em; }\n    nav ul a:hover {\n      background-color: green; }\n    nav ul a:visited, nav ul a:link {\n      color: white;\n      text-decoration: none; }\n  nav ul.right {\n    position: absolute;\n    right: 0;\n    top: 0; }\n\ndiv.row-container {\n  display: flex; }\n  div.row-container div.sideNav {\n    background-color: #18453B;\n    width: 21%; }\n    div.row-container div.sideNav p {\n      margin: 0; }\n      div.row-container div.sideNav p a {\n        padding: 0.5em;\n        text-decoration: none;\n        font-size: 1.2em;\n        color: #ffffff;\n        display: block; }\n      div.row-container div.sideNav p a:hover {\n        background-color: green; }\n    div.row-container div.sideNav ul.sub {\n      padding-inline-start: 1em;\n      margin: 0; }\n      div.row-container div.sideNav ul.sub li {\n        list-style: none; }\n        div.row-container div.sideNav ul.sub li a {\n          text-decoration: none;\n          color: #ffffff; }\n        div.row-container div.sideNav ul.sub li a:hover {\n          background-color: green; }\n  div.row-container div.col-main {\n    width: 85%;\n    background-color: white; }\n\nheader {\n  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;\n  padding: 1em 0; }\n  header h1 {\n    font-size: 3em;\n    text-align: center; }\n    header h1 img {\n      width: 2.12em;\n      height: 2em;\n      vertical-align: middle; }\n  header p {\n    font-size: 1.2em;\n    margin: 1em 5em;\n    text-align: center;\n    position: relative; }\n\nfooter {\n  background-color: #18453B;\n  color: white;\n  text-align: center; }\n  footer p {\n    padding: 0.25em 0;\n    margin-top: 0; }\n\ndiv.staff h3 {\n  text-align: center; }\n\ndiv.staff div.menu {\n  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;\n  font-size: 2em; }\n  div.staff div.menu p {\n    text-align: center;\n    margin: 1em 0; }\n  div.staff div.menu img {\n    vertical-align: middle;\n    height: 100px;\n    width: auto; }\n\ndiv.staff div.header {\n  margin-left: 15em; }\n\ndiv.staff div.staff-btns {\n  text-align: center; }\n  div.staff div.staff-btns p {\n    display: inline; }\n    div.staff div.staff-btns p a {\n      text-decoration: none;\n      color: #000000; }\n    div.staff div.staff-btns p a:hover {\n      text-decoration: underline;\n      color: #18453B; }\n\ndiv.mainpage header a {\n  padding: 0.5em;\n  background-color: #4c4;\n  text-decoration: none;\n  color: white;\n  transition: all 0.1s;\n  -webkit-transition: all 0.1s;\n  position: relative;\n  padding: 0.5em 2em;\n  border-radius: 0.4em;\n  border-bottom: 5px solid #262;\n  text-shadow: 0px 2px #262; }\n\ndiv.mainpage div.container {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-around;\n  align-items: center; }\n  div.mainpage div.container div.sub-card {\n    width: 33%; }\n    div.mainpage div.container div.sub-card img {\n      width: 100%;\n      height: auto; }\n\ndiv.mainpage section.testimonials {\n  background-color: #eee;\n  margin: 1em 5em;\n  padding: 1em 2em;\n  display: table; }\n  div.mainpage section.testimonials h2 {\n    display: table-row;\n    margin: 0 0 1.5em 0; }\n  div.mainpage section.testimonials div.left {\n    width: 45%;\n    display: table-cell;\n    padding-right: 0.25em; }\n  div.mainpage section.testimonials div.right {\n    width: 45%;\n    display: table-cell;\n    padding-left: 0.25em; }\n  div.mainpage section.testimonials blockquote {\n    padding: 0;\n    margin: 0; }\n    div.mainpage section.testimonials blockquote p {\n      padding: 0;\n      margin: 0.5em 0; }\n\ndiv.mainpage form.request {\n  padding: 0 5em; }\n  div.mainpage form.request fieldset {\n    margin: 1em 5em; }\n  div.mainpage form.request p {\n    margin: 0.5em 0; }\n  div.mainpage form.request input[type=\"text\"], div.mainpage form.request input[type=\"email\"] {\n    width: 20em; }\n  div.mainpage form.request textarea {\n    width: 100%;\n    height: 6em; }\n\ntable {\n  margin-left: auto;\n  margin-right: auto;\n  -moz-box-shadow: 6pt 6px 10pt #888;\n  -webkit-box-shadow: 6pt 6px 10pt #888;\n  box-shadow: 6pt 6px 10pt #888;\n  border-left: 1px solid #e0e0e0;\n  border-collapse: collapse; }\n\ntable th {\n  color: white;\n  background-color: #18453B;\n  background: -webkit-gradient(linear, left top, left bottom, from(#18453B), to(#73d189));\n  background: -webkit-linear-gradient(top, #18453B, #73d189);\n  background: -moz-linear-gradient(top, #18453B, #73d189);\n  background: -ms-linear-gradient(top, #18453B, #73d189);\n  background: -o-linear-gradient(top, #18453B, #73d189);\n  text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;\n  border-right: 1px solid #C1DAD7;\n  border-bottom: 1px solid #C1DAD7;\n  border-top: 1px solid #C1DAD7;\n  text-align: left;\n  font-family: Helvetica, Arial, Sans-Serif;\n  text-decoration: none;\n  padding: 0.1em 0.5em; }\n\ntable td {\n  border-right: 1px solid #C1DAD7;\n  border-bottom: 1px solid #C1DAD7;\n  background: white;\n  padding: 0.1em 0.5em;\n  color: #4f6b72; }\n\nth a:link {\n  color: #F5F3EB; }\n\nth a:visited {\n  color: #E3DCC5; }\n\nth a:hover {\n  color: #ffffff; }\n\ndiv.flex-container {\n  display: flex;\n  justify-content: space-around;\n  align-items: center; }\n\ndiv.flex-container.full {\n  width: 100%; }\n\ndiv.categories.container {\n  margin: auto;\n  width: 50%;\n  display: inline-block;\n  float: left; }\n\ndiv.right {\n  display: inline-block;\n  float: right; }\n", ""]);
 
 
 /***/ }),
@@ -11122,23 +11122,48 @@ __webpack_require__.r(__webpack_exports__);
 
 const Categories = function() {
 
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()("#add-top-sub").submit(function (event) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()("select#category-type").change(function (event) {
         event.preventDefault();
 
-        var top_id = jquery__WEBPACK_IMPORTED_MODULE_0___default()("#top_id").val();
-        var sub_id = jquery__WEBPACK_IMPORTED_MODULE_0___default()("#sub_id").val();
+        if(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val() === "sub") {
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()("span.hidden").toggle();
+        } else {
+            if(jquery__WEBPACK_IMPORTED_MODULE_0___default()("span.hidden").is(":visible")) {
+                jquery__WEBPACK_IMPORTED_MODULE_0___default()("span.hidden").toggle();
+            }
+        }
+    });
+
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()("form#categories").submit(function (event) {
+        event.preventDefault();
+
+        var form_data = new FormData();
+        var type = jquery__WEBPACK_IMPORTED_MODULE_0___default()("select#category-type").val();
+
+        form_data.append('name', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#name").val());
+        form_data.append('description', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#description").val());
+        form_data.append('type', type);
+        form_data.append('file', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#file")[0].files[0]);
+        form_data.append('visible', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#visible").val());
+
+        if(type === "sub") {
+            form_data.append('parentID', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#parent-cat").val());
+        }
 
         jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
-            url: "post/map-collections.php",
-            data: {"top_id" : top_id, "sub_id" : sub_id},
-            method: "POST",
+            url: "post/add-cat.php",
+            data: form_data,
+            processData: false,
+            contentType: false,
+            type: "POST",
             success: function(data) {
                 var json = Object(_parse_json__WEBPACK_IMPORTED_MODULE_1__["parse_json"])(data);
+                console.log(json);
                 if(json.ok) {
                     alert("Added!");
                     window.location.reload();
                 } else {
-                    alert("There was an error when adding!");
+                    alert("Error when adding to DB!");
                 }
             },
             error: function(xhr, status, error) {
@@ -11147,6 +11172,7 @@ const Categories = function() {
         });
     });
 };
+
 
 /***/ }),
 
@@ -11219,7 +11245,7 @@ const Product = function () {
         event.preventDefault();
 
         jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
-            url: "post/add-product.php",
+            url: "post/product.php",
             data: jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).serialize(),
             method: "POST",
             success: function(data) {
@@ -11235,65 +11261,6 @@ const Product = function () {
                 alert("Error: " + error);
             }
         });
-    });
-};
-
-/***/ }),
-
-/***/ "./src/js/Scraper.js":
-/*!***************************!*\
-  !*** ./src/js/Scraper.js ***!
-  \***************************/
-/*! exports provided: Scraper */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Scraper", function() { return Scraper; });
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _parse_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parse_json */ "./src/js/parse_json.js");
-
-
-const Scraper = function () {
-
-
-
-    var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
-    function doCORSRequest(options, printResult) {
-        var x = new XMLHttpRequest();
-        x.open(options.method, cors_api_url + options.url);
-        x.onload = x.onerror = function() {
-            printResult(
-                options.method + ' ' + options.url + '\n' +
-                x.status + ' ' + x.statusText + '\n\n' +
-                (x.responseText || '')
-            );
-        };
-        x.send(options.data);
-    }
-
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()("#Ali").click(function (e) {
-        e.preventDefault();
-
-        var urlField = 'https://www.aliexpress.com/';
-        doCORSRequest({
-            method: 'GET',
-            url: urlField,
-            data: '',
-        }, function printResult(result) {
-            console.log(result);
-
-            var categories = jquery__WEBPACK_IMPORTED_MODULE_0___default()("#home-firstscreen > div.container > div > div.categories > div > div.categories-list-box > dl.cl-item > dt").html(result);
-
-            console.log(categories);
-
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()("#Ali-test").text(categories);
-        });
-        if (typeof console === 'object') {
-            console.log('// To test a local CORS Anywhere server, set cors_api_url. For example:');
-            console.log('cors_api_url = "http://localhost:8080/"');
-        }
     });
 };
 
@@ -11345,102 +11312,6 @@ const Staff = function () {
 
 /***/ }),
 
-/***/ "./src/js/SubCat.js":
-/*!**************************!*\
-  !*** ./src/js/SubCat.js ***!
-  \**************************/
-/*! exports provided: SubCat */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SubCat", function() { return SubCat; });
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _parse_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parse_json */ "./src/js/parse_json.js");
-
-
-
-const SubCat = function () {
-
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()("form#add-sub-cat").submit(function (event) {
-        event.preventDefault();
-
-        var form_data = new FormData();
-        form_data.append('name', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#name").val());
-        form_data.append('description', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#description").val());
-        form_data.append('file', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#file")[0].files[0]);
-        form_data.append('visible', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#visible").val());
-
-        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
-            url: "post/sub-cat.php",
-            data: form_data,
-            processData: false,
-            contentType: false,
-            type: "POST",
-            success: function(data) {
-                var json = Object(_parse_json__WEBPACK_IMPORTED_MODULE_1__["parse_json"])(data);
-                console.log(json);
-                if(json.ok) {
-                    alert("Added!");
-                    window.location.reload();
-                } else {
-                    alert("Error when adding to DB!");
-                }
-            },
-            error: function(xhr, status, error) {
-                alert("Error: " + error);
-            }
-        });
-    });
-};
-
-/***/ }),
-
-/***/ "./src/js/TopCat.js":
-/*!**************************!*\
-  !*** ./src/js/TopCat.js ***!
-  \**************************/
-/*! exports provided: TopCat */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TopCat", function() { return TopCat; });
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _parse_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parse_json */ "./src/js/parse_json.js");
-
-
-
-const TopCat = function () {
-
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()("form#add-top-cat").submit(function (event) {
-        event.preventDefault();
-
-        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
-            url: "post/top-cat.php",
-            data: jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).serialize(),
-            method: "POST",
-            success: function(data) {
-                var json = Object(_parse_json__WEBPACK_IMPORTED_MODULE_1__["parse_json"])(data);
-                console.log(json);
-                if(json.ok) {
-                    alert("Added!");
-                    window.location.reload();
-                } else {
-                    alert("Error when adding to DB!");
-                }
-            },
-            error: function(xhr, status, error) {
-                alert("Error: " + error);
-            }
-        });
-    });
-};
-
-/***/ }),
-
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
@@ -11453,17 +11324,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Login */ "./src/js/Login.js");
-/* harmony import */ var _TopCat__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TopCat */ "./src/js/TopCat.js");
-/* harmony import */ var _SubCat__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SubCat */ "./src/js/SubCat.js");
-/* harmony import */ var _Product__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Product */ "./src/js/Product.js");
-/* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Categories */ "./src/js/Categories.js");
-/* harmony import */ var _Staff__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Staff */ "./src/js/Staff.js");
-/* harmony import */ var _Scraper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Scraper */ "./src/js/Scraper.js");
-/* harmony import */ var _scss_Home_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../scss/Home.scss */ "./src/scss/Home.scss");
-/* harmony import */ var _scss_Home_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_scss_Home_scss__WEBPACK_IMPORTED_MODULE_8__);
-
-
-
+/* harmony import */ var _Product__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Product */ "./src/js/Product.js");
+/* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Categories */ "./src/js/Categories.js");
+/* harmony import */ var _Staff__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Staff */ "./src/js/Staff.js");
+/* harmony import */ var _scss_Home_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../scss/Home.scss */ "./src/scss/Home.scss");
+/* harmony import */ var _scss_Home_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_scss_Home_scss__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
@@ -11474,13 +11339,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-   new _Staff__WEBPACK_IMPORTED_MODULE_6__["Staff"]();
+   new _Staff__WEBPACK_IMPORTED_MODULE_4__["Staff"]();
    new _Login__WEBPACK_IMPORTED_MODULE_1__["Login"]();
-   new _TopCat__WEBPACK_IMPORTED_MODULE_2__["TopCat"]();
-   new _SubCat__WEBPACK_IMPORTED_MODULE_3__["SubCat"]();
-   new _Product__WEBPACK_IMPORTED_MODULE_4__["Product"]();
-   new _Scraper__WEBPACK_IMPORTED_MODULE_7__["Scraper"]();
-   new _Categories__WEBPACK_IMPORTED_MODULE_5__["Categories"]();
+   new _Product__WEBPACK_IMPORTED_MODULE_2__["Product"]();
+   new _Categories__WEBPACK_IMPORTED_MODULE_3__["Categories"]();
 });
 
 

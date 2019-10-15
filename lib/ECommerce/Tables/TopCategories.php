@@ -13,11 +13,11 @@ class TopCategories extends Table {
         parent::__construct($site, "top_cat");
     }
 
-    public function add($name, $description, $visible) {
-        $sql = "INSERT INTO $this->tableName (name, description, visible) VALUES (?, ?, ?)";
+    public function add($name, $description, $visible, $img) {
+        $sql = "INSERT INTO $this->tableName (name, description, visible, img) VALUES (?, ?, ?, ?)";
 
         $statement = $this->pdo()->prepare($sql);
-        $statement->execute(array($name, $description, $visible));
+        $statement->execute(array($name, $description, $visible, $img));
         if($statement->rowCount() === 0) {
             return false;
         }

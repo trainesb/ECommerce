@@ -8,7 +8,7 @@ use ECommerce\Tables\SubCategories;
 use ECommerce\Tables\TopCategories;
 use ECommerce\Tables\TopSubMaps;
 
-class CollectionsView extends View {
+class CategoriesView extends View {
 
     private $site;
     private $topCategories;
@@ -21,7 +21,7 @@ class CollectionsView extends View {
         $this->topCategories = new TopCategories($this->site);
         $this->subCategories = new SubCategories($this->site);
 
-        $this->setTitle("Categories");
+        $this->setTitle("All Categories");
 
         $this->addLink("./profile.php", "Profile");
         $this->addLink("post/logout.php", "Log Out");
@@ -31,7 +31,7 @@ class CollectionsView extends View {
         echo "<div class='row-container'>";
         echo $this->sideNav();
         echo "<div class='col-main'>";
-        echo "<h1 class='center'>Collections</h1>";
+        echo "<h1 class='center'>All Categories</h1>";
         echo $this->collections();
         echo $this->topCategories();
         echo "<br>";
@@ -78,18 +78,21 @@ class CollectionsView extends View {
         <th>Name</th>
 		<th>Description</th>
 		<th>Visible</th>
+		<th>Image</th>
 	</tr>
 HTML;
         foreach ($all as $top) {
             $name = $top['name'];
             $description = $top['description'];
             $visible = $top['visible'];
+            $img = $top['img'];
             $html .= <<<HTML
 		<tr>
 			<td><input type="radio" name="top-cat"></td>
 			<td>$name</td>
 			<td>$description</td>
 			<td>$visible</td>
+			<td>$img</td>
 		</tr>
 HTML;
         }

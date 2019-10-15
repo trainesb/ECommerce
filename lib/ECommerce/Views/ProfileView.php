@@ -24,7 +24,6 @@ class ProfileView extends View {
         $name = $this->user->getName();
         $role = $this->user->getRole();
         $notes = $this->user->getNotes();
-        $address = $this->user->getAddress();
         $phone = $this->user->getName();
         $email = $this->user->getEmail();
         return <<<HTML
@@ -32,7 +31,6 @@ class ProfileView extends View {
     <p>Name: $name</p>
     <p>Email: $email</p>
     <p>Phone: $phone</p>
-    <p>Address: $address</p>
     <p>Notes: $notes</p>
     <p>Role: $role</p>
 </div>

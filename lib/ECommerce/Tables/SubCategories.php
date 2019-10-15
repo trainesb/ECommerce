@@ -34,4 +34,15 @@ SQL;
 
         return $statement->fetch(\PDO::FETCH_ASSOC);
     }
+
+    public function getIdByName($name) {
+        $sql = "SELECT id FROM $this->tableName WHERE name=?";
+        $statement = $this->pdo()->prepare($sql);
+        $statement->execute(array($name));
+        if($statement->rowCount() === 0) {
+            return null;
+        }
+
+        return $statement->fetch(\PDO::FETCH_ASSOC);
+    }
 }
