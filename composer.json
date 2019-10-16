@@ -3,6 +3,7 @@
     "psr-4": {"ECommerce\\": "lib/ECommerce"}
   },
   "require": {
-    "ext-json": "*"
+    "ext-json": "*",
+    "ext-curl": "*"
   }
 }

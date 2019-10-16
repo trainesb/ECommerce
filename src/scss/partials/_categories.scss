@@ -1,4 +1,11 @@
 div.categories.container {
   margin: auto;
-  width: 30%;
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
+
+div.right {
+  display: inline-block;
+  float: right;
 }

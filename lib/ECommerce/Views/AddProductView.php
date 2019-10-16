@@ -3,7 +3,6 @@
 
 namespace ECommerce\Views;
 
-
 use ECommerce\Site;
 use ECommerce\Tables\Products;
 
@@ -51,8 +50,8 @@ class AddProductView extends View {
         <p>
             <label for="sold-out">Sold Out</label>
             <select id="sold-out" name="sold-out">
-                <option value="1">True</option>
                 <option value="0">False</option>
+                <option value="1">True</option>
             </select>
         </p>
         <p>

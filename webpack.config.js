@@ -7,6 +7,10 @@ module.exports = {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist')
     },
+    target: "node",
+    node: {
+        fs: 'empty'
+    },
     devtool: 'source-map',
     plugins: [
         new CopyWebpackPlugin([

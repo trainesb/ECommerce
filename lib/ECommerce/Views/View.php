@@ -4,7 +4,6 @@
 namespace ECommerce\Views;
 
 use ECommerce\Site;
-use ECommerce\Tables\TopCategories;
 
 class View {
 
@@ -67,25 +66,21 @@ HTML;
     
     <p class="products"><a href="">Products</a></p>
     <ul class="sub" hidden>
-        <li><a href=".\products.php">All Products</a></li>
-        <li><a href=".\add-product.php">Add Product</a></li>
-        <li><a href=".\product-map.php">Collection Product Map</a></li>
+        <li><p><a href=".\products.php">All Products</a></p></li>
+        <li><p><a href=".\add-product.php">Add Product</a></p></li>
     </ul>
     
-    <p class="collections"><a href="">Collections</a></p>
+    <p class="collections"><a href="">Categories</a></p>
     <ul class="sub" hidden>
-        <li><a href=".\collections.php">All Collections</a></li>
-        <li><a href=".\add-top-cat.php">Add Top-Collection</a></li>
-        <li><a href=".\add-sub-cat.php">Add Sub-Collection</a></li>
-        <li><a href=".\map-collections.php">Collections Map</a></li>
+        <li><p><a href=".\categories.php">All Categories</a></p></li>
+        <li><p><a href=".\add-cat.php">Add Category</a></p></li>
     </ul>
     
     <p class="users"><a>Users</a></p>
     <ul class="sub" hidden>
-        <li><a href=".\users.php">All Users</a></li>
-        <li><a href=".\add-user.php">Add User</a></li>
-</ul>
-   
+        <li><p><a href=".\users.php">All Users</a></p></li>
+        <li><p><a href=".\add-user.php">Add User</a></p></li>
+    </ul>
 </div>
 HTML;
     }

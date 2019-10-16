@@ -20,4 +20,10 @@ export const Staff = function () {
 
         $("p.users + ul.sub").toggle();
     });
+
+    $("div.sideNav p.warehouses").click(function (event) {
+        event.preventDefault();
+
+        $("p.warehouses + ul.sub").toggle();
+    });
 };
