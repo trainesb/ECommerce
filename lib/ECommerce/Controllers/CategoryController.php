@@ -25,7 +25,7 @@ class CategoryController extends Controller {
 
         $img = "";
         if(!empty($files) && $this->uploadImg()) {
-            $img = "dist/img/categories/".$this->post['type']."/" . basename($this->files["file"]["name"]);
+            $img = "src/img/categories/".$this->post['type']."/" . basename($this->files["file"]["name"]);
         }
 
         if($post['type'] === 'top') {
@@ -58,7 +58,7 @@ class CategoryController extends Controller {
     }
 
     public function uploadImg() {
-        $target_dir = dirname(__FILE__)."/../../../dist/img/categories/".$this->post['type']."/";
+        $target_dir = dirname(__FILE__)."/../../../src/img/categories/".$this->post['type']."/";
         $target_file = $target_dir . basename($this->files["file"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
