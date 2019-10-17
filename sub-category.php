@@ -13,9 +13,8 @@ $view = new ECommerce\Views\HomeView($site, $user);
 <body>
 <div class="mainpage">
     <?php echo $view->nav($site); ?>
-    <h1 class="center">Home</h1>
+    <h1 class="center">Sub-Category Page</h1>
     <?php
-    echo $view->presentSub();
     echo $view->footer();
     ?>
 </div>

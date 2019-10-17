@@ -42,7 +42,7 @@ class HomeView extends View {
 <div class="sub-card">
     <img src="$img" alt="Sub-category image">
     <div class="container">
-        <h4><b>$name</b></h4>
+        <h4><b class="cat-name">$name</b></h4>
         <p>$description</p>
     </div>
 </div>
@@ -64,7 +64,7 @@ HTML;
             $id = $sub['id'];
             if($sub['visible']) {
                 $html .= <<<HTML
-<div class="sub-card top-card">
+<div class="top-card">
     <img src="$img" alt="Sub-category image">
     <div class="container">
         <h4><b class="cat-name">$name</b></h4>
