@@ -61,12 +61,13 @@ HTML;
             $img = $sub['img'];
             $name = $sub['name'];
             $description = $sub['description'];
+            $id = $sub['id'];
             if($sub['visible']) {
                 $html .= <<<HTML
-<div class="sub-card">
+<div class="sub-card top-card">
     <img src="$img" alt="Sub-category image">
     <div class="container">
-        <h4><b>$name</b></h4>
+        <h4><b class="cat-name">$name</b></h4>
         <p>$description</p>
     </div>
 </div>
