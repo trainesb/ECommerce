@@ -11244,10 +11244,22 @@ const Product = function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("form#add-product").submit(function (event) {
         event.preventDefault();
 
+        var form_data = new FormData();
+
+        form_data.append('sku', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#sku").val());
+        form_data.append('title', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#title").val());
+        form_data.append('price', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#price").val());
+        form_data.append('sold-out', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#sold-out").val());
+        form_data.append('description', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#description").val());
+        form_data.append('file', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#file")[0].files[0]);
+        form_data.append('visible', jquery__WEBPACK_IMPORTED_MODULE_0___default()("#visible").val());
+
         jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
             url: "post/product.php",
-            data: jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).serialize(),
-            method: "POST",
+            data: form_data,
+            processData: false,
+            contentType: false,
+            type: "POST",
             success: function(data) {
                 var json = Object(_parse_json__WEBPACK_IMPORTED_MODULE_1__["parse_json"])(data);
                 if(json.ok) {

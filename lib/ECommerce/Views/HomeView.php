@@ -5,6 +5,7 @@ namespace ECommerce\Views;
 
 use ECommerce\Site;
 use ECommerce\Tables\SubCategories;
+use ECommerce\Tables\TopCategories;
 
 class HomeView extends View {
 
@@ -20,9 +21,11 @@ class HomeView extends View {
             if($user->isStaff()) {
                 $this->addLink("./staff.php", "Staff");
             }
+            $this->addLink("./cart.php", "Cart");
             $this->addLink("./profile.php", "Profile");
             $this->addLink("./logout,php", "Log Out");
         } else {
+            $this->addLink("./cart.php", "Cart");
             $this->addLink("login.php", "Log In");
         }
     }
@@ -49,5 +52,30 @@ HTML;
         $html .= "</div>";
         return $html;
     }
+
+    public function presentTop() {
+        $top = new TopCategories($this->site);
+        $all = $top->getAll();
+        $html = "<div class='container'>";
+        foreach ($all as $sub) {
+            $img = $sub['img'];
+            $name = $sub['name'];
+            $description = $sub['description'];
+            if($sub['visible']) {
+                $html .= <<<HTML
+<div class="sub-card">
+    <img src="$img" alt="Sub-category image">
+    <div class="container">
+        <h4><b>$name</b></h4>
+        <p>$description</p>
+    </div>
+</div>
+HTML;
+            }
+        }
+        $html .= "</div>";
+        return $html;
+    }
+
 
 }

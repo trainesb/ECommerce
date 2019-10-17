@@ -15,6 +15,7 @@ class StaffView extends View {
 
         $this->setTitle("Staff");
 
+        $this->addLink("./cart.php", "Cart");
         $this->addLink("./profile.php", "Profile");
         $this->addLink("post/logout.php", "Log Out");
     }
