@@ -1,7 +1,7 @@
 <?php
 $open = true;
 require 'lib/site.inc.php';
-$view = new ECommerce\Views\HomeView($site, $user);
+$view = new ECommerce\Views\Cart($site, $user);
 ?>
 
 <!DOCTYPE html>
@@ -11,11 +11,11 @@ $view = new ECommerce\Views\HomeView($site, $user);
 </head>
 
 <body>
-<div class="mainpage">
+<div class="cart">
     <?php echo $view->nav($site); ?>
-    <h1 class="center">Home</h1>
+
+    <h1 class="center">Cart</h1>
     <?php
-    echo $view->presentTop();
     echo $view->footer();
     ?>
 </div>

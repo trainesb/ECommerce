@@ -43,10 +43,6 @@ class AddUserView extends View {
 			<input type="text" id="phone" name="phone" placeholder="Phone">
 		</p>
 		<p>
-			<label for="address">Address</label><br>
-			<textarea id="address" name="address" placeholder="Address"></textarea>
-		</p>
-		<p>
 			<label for="notes">Notes</label><br>
 			<textarea id="notes" name="notes" placeholder="Notes"></textarea>
 		</p>

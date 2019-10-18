@@ -59,6 +59,10 @@ class AddProductView extends View {
             <textarea id="description" name="description" placeholder="Description..."></textarea>
         </p>
         <p>
+            <label for="file">Select Image to Upload</label>
+            <input type="file" id="file" name="file">
+        </p>
+        <p>
             <label for="visible">Visible</label>
             <select id="visible" name="visible">
                 <option value="1">True</option>
