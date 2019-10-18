@@ -11211,6 +11211,16 @@ const Home = function() {
 
         window.location.assign("./sub-category.php?sub-category=" + name);
     });
+
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".prdct-card").click(function (event) {
+        event.preventDefault();
+
+        var sku = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".prdct-card > .sku").text();
+        console.log(sku);
+
+        window.location.assign("./product.php?sku=" + sku);
+    });
+
 };
 
 

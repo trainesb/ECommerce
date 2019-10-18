@@ -8,7 +8,6 @@ use ECommerce\Site;
 
 class Cart extends View {
 
-
     public function __construct(Site $site, $user) {
         $this->setTitle("Cart");
 

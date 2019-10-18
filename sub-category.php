@@ -1,7 +1,7 @@
 <?php
 $open = true;
 require 'lib/site.inc.php';
-$view = new ECommerce\Views\HomeView($site, $user);
+$view = new ECommerce\Views\SubCategory($site, $user);
 ?>
 
 <!DOCTYPE html>
@@ -11,10 +11,11 @@ $view = new ECommerce\Views\HomeView($site, $user);
 </head>
 
 <body>
-<div class="mainpage">
+<div class="sub-category">
     <?php echo $view->nav($site); ?>
     <h1 class="center">Sub-Category Page</h1>
     <?php
+    echo $view->presentProducts();
     echo $view->footer();
     ?>
 </div>

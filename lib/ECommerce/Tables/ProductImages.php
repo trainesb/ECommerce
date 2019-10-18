@@ -26,7 +26,7 @@ SQL;
     }
 
     public function getBySku($sku) {
-        $sql = "SELECT * FROM ".$this->getTableName()." WHERE sku=?";
+        $sql = "SELECT img FROM ".$this->getTableName()." WHERE sku=?";
         $statement = $this->pdo()->prepare($sql);
         $statement->execute(array($sku));
         if($statement->rowCount() === 0) {

@@ -15,7 +15,7 @@ class AddProductView extends View {
         $this->site = $site;
         $this->products = new Products($this->site);
 
-        $this->setTitle("Add Product");
+        $this->setTitle("Add SubCategory");
 
         $this->addLink("./profile.php", "Profile");
         $this->addLink("post/logout.php", "Log Out");
@@ -31,10 +31,10 @@ class AddProductView extends View {
 
     public function addProduct() {
         return <<<HTML
-<h1 class="center">Add Product</h1>
+<h1 class="center">Add SubCategory</h1>
 <form id="add-product" method="post" enctype="multipart/form-data">
     <fieldset>
-        <legend>Product</legend>
+        <legend>SubCategory</legend>
         <p>
             <label for="sku">Sku</label><br>
             <input type="text" id="sku" name="sku" placeholder="sku">

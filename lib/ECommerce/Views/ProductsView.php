@@ -19,7 +19,7 @@ class ProductsView extends View {
         $this->products = new Products($this->site);
         $this->imgs = new ProductImages($site);
 
-        $this->setTitle("All Products");
+        $this->setTitle("All Product");
 
         $this->addLink("./profile.php", "Profile");
         $this->addLink("post/logout.php", "Log Out");
@@ -66,7 +66,7 @@ HTML;
         $all = $this->products->getAll();
 
         $html = <<<HTML
-<h1 class='center'>All Products</h1>
+<h1 class='center'>All Product</h1>
 <table>
     <tr>
         <th></th>

@@ -20,4 +20,14 @@ export const Home = function() {
 
         window.location.assign("./sub-category.php?sub-category=" + name);
     });
+
+    $(".prdct-card").click(function (event) {
+        event.preventDefault();
+
+        var sku = $(".prdct-card > .sku").text();
+        console.log(sku);
+
+        window.location.assign("./product.php?sku=" + sku);
+    });
+
 };

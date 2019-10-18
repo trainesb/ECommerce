@@ -64,10 +64,10 @@ HTML;
 <div class="sideNav">
     <p><a href=".\staff.php">Staff</a></p>
     
-    <p class="products"><a href="">Products</a></p>
+    <p class="products"><a href="">Product</a></p>
     <ul class="sub" hidden>
-        <li><p><a href=".\products.php">All Products</a></p></li>
-        <li><p><a href=".\add-product.php">Add Product</a></p></li>
+        <li><p><a href=".\products.php">All Product</a></p></li>
+        <li><p><a href=".\add-product.php">Add SubCategory</a></p></li>
     </ul>
     
     <p class="collections"><a href="">Categories</a></p>
